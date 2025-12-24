@@ -26,7 +26,7 @@ export default function RoomsPage() {
             <section className="section-breadcrumb padding-b-50">
                 <div className="rx-breadcrumb-image">
                     <div className="rx-breadcrumb-overlay" />
-                    <div className="inner-breadcrumb-contact">
+                    <div className="inner-breadcrumb-contact sub_header_content">
                         <div className="main-breadcrumb-contact">
                             <div className="container">
                                 <div className="row">
@@ -38,13 +38,7 @@ export default function RoomsPage() {
                                 </div>
                             </div>
                         </div>
-                        <div className="rx-banner-breadcrumb">
-                            <div className="container">
-                                <div className="row">
-                                    
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </section>
