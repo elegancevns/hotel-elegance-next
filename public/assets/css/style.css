@@ -6526,7 +6526,7 @@ figure {
     color: #fbfbfb;
 }
 .sub_header_content {
-    display: table;
+    display: block;
     width: 100%;
     background: url(../dev-img/pattern_3.png) repeat-x center bottom;
 }
