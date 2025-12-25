@@ -146,9 +146,9 @@ export const Header = () => {
                                             </Link>
                                         </li>
                                         <li className="nav-item">
-                                            <a className="nav-link" href="#">
+                                            <Link className="nav-link" href="/tariff">
                                                 Tariff
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                     <div className="header-button">

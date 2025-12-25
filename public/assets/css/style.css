@@ -6736,3 +6736,8 @@ figure {
         left: 125%;
     }
 }
+.book-now span{
+    font-size: 18px;
+    color: #555555;
+    font-weight: 400;
+}
