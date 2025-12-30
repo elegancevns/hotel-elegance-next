@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 
-export default function Banner() {
+export default function Banner({ initialVideo }) {
     const [open, setOpen] = useState(false)
     const [openSecond, setOpenSecond] = useState(false)
     const [adults, setAdults] = useState(1);
@@ -16,7 +16,6 @@ export default function Banner() {
     const [departureDate, setDepartureDate] = useState();
     const [phoneNumber, setPhoneNumber] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsLoading(true);
@@ -50,7 +49,7 @@ export default function Banner() {
                                     className="w-full h-full object-cover"
                                 >
                                     <source
-                                        src="https://inforbit.in/banner-video-nw.mp4"
+                                        src={initialVideo}
                                         type="video/mp4"
                                     />
                                     Your browser does not support the video tag.

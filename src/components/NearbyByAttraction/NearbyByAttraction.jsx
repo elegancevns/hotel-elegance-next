@@ -12,92 +12,12 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-export const NearbyByAttraction = () => {
-    const attractions = [
-        {
-            id: 1,
-            image: "assets/dev-img/assi-ghat-banaras-hotel-elegance.jpg",
-            alt: "Assi Ghat, Banaras",
-            title: "Assi Ghat",
-            description: "Dev Elegance",
-            distance: "2.5 km"
-        },
-        {
-            id: 2,
-            image: "assets/dev-img/dashashwamedh-ghat-banaras-varanasi-hotel-elegance.webp",
-            alt: "Dashashwamedh Ghat, Banaras",
-            title: "Dashashwamedh Ghat",
-            description: "Dev Elegance",
-            distance: "3.2 km"
-        },
-        {
-            id: 3,
-            image: "assets/dev-img/khidkiya-namo-ghat-varanasi-hotel-elegance.jpg",
-            alt: "Khidkiya Namo Ghat, Varanasi",
-            title: "Khidkiya Namo Ghat",
-            description: "Dev Elegance",
-            distance: "4.1 km"
-        },
-        {
-            id: 4,
-            image: "assets/dev-img/sankat-mochan-banaras-hotel-elegance.jpg",
-            alt: "Sankat Mochan Temple, Banaras",
-            title: "Sankat Mochan Temple",
-            description: "Dev Elegance",
-            distance: "1.8 km"
-        },
-        {
-            id: 5,
-            image: "assets/dev-img/kaal-bhairav-mandir-kashi-hotel-elegance.webp",
-            alt: "Kaal Bhairav Temple, Kashi",
-            title: "Kaal Bhairav Temple",
-            description: "Dev Elegance",
-            distance: "2.9 km"
-        },
-        {
-            id: 6,
-            image: "assets/dev-img/assi-ghat-banaras-hotel-elegance.jpg",
-            alt: "Tulsi Manas Temple",
-            title: "Tulsi Manas Temple",
-            description: "Dev Elegance",
-            distance: "3.5 km"
-        },
-        {
-            id: 7,
-            image: "assets/dev-img/dashashwamedh-ghat-banaras-varanasi-hotel-elegance.webp",
-            alt: "Bharat Mata Temple",
-            title: "Bharat Mata Temple",
-            description: "Dev Elegance",
-            distance: "4.3 km"
-        }
-    ];
-
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100,
-        });
-        if (typeof window !== 'undefined') {
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', () => {
-                    imageTosvg();
-                });
-            } else {
-                imageTosvg();
-            }
-        }
-    }, []);
-
+export const NearbyByAttraction = ({ initialAttractions = [] }) => {  
     return (
         <section className="section-contact padding-t-50 padding-b-100 home-map-bg">
             <div className="container">
                 <div className="row">
-                    <div
-                        className="col-12"
-                        data-aos="fade-up"
-                        data-aos-duration="1000"
-                    >
+                    <div className="col-12">
                         <div className="rx-contact-form">
                             <div className="row align-items-center">
                                 <div className="col-lg-6 col-12 mb-24">
@@ -142,7 +62,7 @@ export const NearbyByAttraction = () => {
                                                 <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white hover:bg-gray-50 text-gray-800 border-gray-300 shadow-lg hover:shadow-xl transition-all duration-300 w-10 h-10 rounded-full flex items-center justify-center" />
 
                                                 <CarouselContent className="py-1">
-                                                    {attractions.map((attraction) => (
+                                                    {initialAttractions.map((attraction) => (
                                                         <CarouselItem
                                                             key={attraction.id}
                                                             className="pl-4 basis-full sm:basis-1/2 lg:basis-1/2"
@@ -151,15 +71,15 @@ export const NearbyByAttraction = () => {
                                                                 <div className="col-12">
                                                                     <div className="rx-amenities-img relative overflow-hidden rounded-xl group transition-all duration-300 hover:shadow-xl">
                                                                         <img
-                                                                            src={attraction.image}
-                                                                            alt={attraction.alt}
+                                                                            src={attraction.image_url}
+                                                                            alt={attraction.title}
                                                                             className="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-105"
                                                                         />
                                                                         <div className="map-title absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-2">
                                                                             <div className="flex justify-between items-start">
                                                                                 <div>
                                                                                     <h6 className="text-white font-bold text-base md:text-lg">{attraction.title}</h6>
-                                                                                    <p className="text-white/100 text-xs md:text-sm">{attraction.description}</p>
+                                                                                    <p className="text-white/100 text-xs md:text-sm">{attraction.short_desc?.slice(0, 20)}...</p>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
