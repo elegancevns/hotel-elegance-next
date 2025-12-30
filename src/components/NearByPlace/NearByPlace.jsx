@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { imageTosvg } from '@/utils/imageToSvg';
-
+import Link from 'next/link';
 export const NearByPlace = ({ initialNearByPlace = [] }) => {
     const [isAOSInitialized, setIsAOSInitialized] = useState(false);
     const [isClient, setIsClient] = useState(false);
@@ -79,7 +79,7 @@ export const NearByPlace = ({ initialNearByPlace = [] }) => {
                             {...getAOSProps(index * 200)}
                         >
                             <div className="rx-spa-card">
-                                <a href={`${place.slug || '#'}`}>
+                                <Link href={`/near-by-place/${place.slug}`}>
                                     <div className="spa-img">
                                         <img
                                             src={place.image_url}
@@ -94,7 +94,7 @@ export const NearByPlace = ({ initialNearByPlace = [] }) => {
                                         <h4 className="text-lg font-bold mb-2">{place.title}</h4>
                                         <p className="text-gray-600 text-sm">{place.short_desc}</p>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     ))}
@@ -105,7 +105,7 @@ export const NearByPlace = ({ initialNearByPlace = [] }) => {
                             {...getAOSProps(600)}
                         >
                             <div className="text-center">
-                                <a href="/nearby-places" className="btn rx-btn-two">
+                                <a href="/near-by-place" className="btn rx-btn-two">
                                     View More Places in Varanasi
                                 </a>
                             </div>
