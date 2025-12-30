@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { imageTosvg } from '@/utils/imageToSvg';
@@ -12,69 +12,30 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-export const Testimonials = () => {
-    const testimonials = [
-        {
-            id: 1,
-            hotelName: "The Elegance Hotel",
-            guestType: "Guests",
-            dateVisited: "May 2025",
-            review: "Fantastic hotel and service... Great ambience and locationnice experience in vanaras Good service in the elegance hotel Very supportive and helping staff Thanks to all good 👍 hotel in varanasi .................................staff excellent forgood smile.....",
-            ratings: {
-                value: 5.0,
-                rooms: 5.0,
-                location: 5.0,
-                cleanliness: 5.0,
-                service: 5.0,
-                sleepQuality: 5.0
-            }
-        },
-        {
-            id: 2,
-            title: "Excellent",
-            guestType: "Guests",
-            dateVisited: "May 2025",
-            review: "staffs including sweeper, waiters, manager and the receptionist is welbehaved. The atmosphere and surroundings of Varanasi is very good. I am pleased with all. Thanking all................................................",
-            ratings: {
-                value: 5.0,
-                rooms: 5.0,
-                location: 5.0,
-                cleanliness: 5.0,
-                service: 5.0,
-                sleepQuality: 5.0
-            }
-        },
-        {
-            id: 3,
-            title: "Excellent",
-            guestType: "Guests",
-            dateVisited: "Apr 2025",
-            review: "The hospitality of Hotel Elegance is the best . All staffs including sweeper, waiters, manager and the receptionist Miss Deeksha Singh is welbehaved. The atmosphere and surroundings of Varanasi is very good. I am pleased with all. Thanking all.",
-            ratings: {
-                value: 5.0,
-                rooms: 5.0,
-                location: 5.0,
-                cleanliness: 5.0,
-                service: 5.0,
-                sleepQuality: 5.0
-            }
-        },
-        {
-            id: 4,
-            hotelName: "The elegance",
-            guestType: "Guests",
-            dateVisited: "Apr 2025",
-            review: "Nice hotel \nVery nice experience in vanaras Good service in the elegance hotel Very supportive and helping staff Thanks to all good 👍 hotel in varanasi .................................staff excellent for Diksha ma'am good smile.....",
-            ratings: {
-                value: 5.0,
-                rooms: 5.0,
-                location: 5.0,
-                cleanliness: 5.0,
-                service: 5.0,
-                sleepQuality: 5.0
-            }
+export const Testimonials = ({ initialTestimonials = [] }) => {
+    const [testimonials, setTestimonials] = useState([]);
+
+    useEffect(() => {
+        // Transform API data to match your component structure
+        if (initialTestimonials && initialTestimonials.length > 0) {
+            const transformedTestimonials = initialTestimonials.map((item, index) => ({
+                id: item.id || index + 1,
+                hotelName: item.title || "Guest Review",
+                guestType: item.guest_type || "Guest",
+                dateVisited: item.visit_date || "Recently",
+                review: item.review_text || "",
+                ratings: {
+                    value: item.ratings?.value || 5.0,
+                    rooms: item.ratings?.rooms || 5.0,
+                    location: item.ratings?.location || 5.0,
+                    cleanliness: item.ratings?.cleanliness || 5.0,
+                    service: item.ratings?.service || 5.0,
+                    sleepQuality: item.ratings?.sleepQuality || 5.0
+                }
+            }));
+            setTestimonials(transformedTestimonials);
         }
-    ];
+    }, [initialTestimonials]);
 
     useEffect(() => {
         AOS.init({
@@ -97,7 +58,7 @@ export const Testimonials = () => {
         <div className="rating-bar">
             <div
                 className="rating-fill"
-                style={{ width: "100%" }}
+                style={{ width: `${(score / 5) * 100}%` }}
             />
         </div>
     );
@@ -165,7 +126,7 @@ export const Testimonials = () => {
                                             <div className="col-md-10 col-12 mb-24">
                                                 <div className="rx-testimonials-contact">
                                                     <div className="rx-inner-banner">
-                                                        <h4>{testimonial.hotelName || testimonial.title}</h4>
+                                                        <h4>{testimonial.hotelName}</h4>
                                                         <span>
                                                             ({testimonial.guestType})
                                                             <span>
