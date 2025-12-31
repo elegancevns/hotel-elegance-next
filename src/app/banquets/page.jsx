@@ -15,7 +15,7 @@ export default function BanquetsPage() {
                 <div className="row">
                   <div className="col-12">
                     <div className="rx-banner-contact">
-                      <h2>Banquets</h2>
+                      <h1>Banquets</h1>
                     </div>
                   </div>
                 </div>

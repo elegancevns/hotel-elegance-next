@@ -3,6 +3,8 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { imageTosvg } from '@/utils/imageToSvg';
+import Image from 'next/image';
+import Link from 'next/link';
 import {
     Carousel,
     CarouselContent,
@@ -70,10 +72,14 @@ export const NearbyByAttraction = ({ initialAttractions = [] }) => {
                                                             <div className="row">
                                                                 <div className="col-12">
                                                                     <div className="rx-amenities-img relative overflow-hidden rounded-xl group transition-all duration-300 hover:shadow-xl">
-                                                                        <img
+                                                                        <Link href={`/near-by-place/${attraction.slug}`}>
+                                                                        <Image
                                                                             src={attraction.image_url}
                                                                             alt={attraction.title}
                                                                             className="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+                                                                            width={200}
+                                                                            height={200}
+                                                                            sizes='300'
                                                                         />
                                                                         <div className="map-title absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-2">
                                                                             <div className="flex justify-between items-start">
@@ -83,6 +89,7 @@ export const NearbyByAttraction = ({ initialAttractions = [] }) => {
                                                                                 </div>
                                                                             </div>
                                                                         </div>
+                                                                        </Link>
                                                                     </div>
                                                                 </div>
                                                             </div>

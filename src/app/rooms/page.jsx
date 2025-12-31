@@ -32,7 +32,7 @@ export default function RoomsPage() {
                                 <div className="row">
                                     <div className="col-12">
                                         <div className="rx-banner-contact">
-                                            <h2>Room</h2>
+                                            <h1>Room</h1>
                                         </div>
                                     </div>
                                 </div>

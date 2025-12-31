@@ -64,7 +64,7 @@ export default function GalleryPage() {
                                 <div className="row">
                                     <div className="col-12">
                                         <div className="rx-banner-contact">
-                                            <h2>Gallery</h2>
+                                            <h1>Gallery</h1>
                                         </div>
                                     </div>
                                 </div>

@@ -63,7 +63,7 @@ export default function tariffPage() {
                                 <div className="row">
                                     <div className="col-12">
                                         <div className="rx-banner-contact">
-                                            <h2>Tariff</h2>
+                                            <h1>Tariff</h1>
                                         </div>
                                     </div>
                                 </div>

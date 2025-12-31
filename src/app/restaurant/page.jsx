@@ -32,7 +32,7 @@ export default function RestaurantPage() {
                                 <div className="row">
                                     <div className="col-12">
                                         <div className="rx-banner-contact">
-                                            <h2>Restaurant</h2>
+                                            <h1>Restaurant</h1>
                                         </div>
                                     </div>
                                 </div>

@@ -16,11 +16,11 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
           rel="icon"
-          href="assets/dev-img/logo/fav.png"
+          href="/assets/dev-img/logo/fav.png"
           type="image/x-icon"
         />
-        <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
-        <link rel="stylesheet" href="assets/css/vendor/remixicon.css" />
+        <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css" />
+        <link rel="stylesheet" href="/assets/css/vendor/remixicon.css" />
         {/* <link rel="stylesheet" href="assets/css/vendor/aos.css" /> */}
         {/* <link rel="stylesheet" href="assets/css/vendor/animate.min.css" /> */}
         {/* <link rel="stylesheet" href="assets/css/vendor/jquery.fancybox.min.css"/> */}
@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="assets/css/vendor/owl.carousel.min.css" />
         <link rel="stylesheet" href="assets/css/vendor/swiper-bundle.min.css" /> */}
         {/* Main Style */}
-        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="/assets/css/style.css" />
       </head>
       <body>
         <div className="page-wraper">
@@ -37,9 +37,9 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
         </div>
-        <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
-        <script src="assets/js/vendor/jquery-ui.min.js"></script>
+        <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script>
+        <script src="/assets/js/vendor/jquery-3.7.1.min.js"></script>
+        <script src="/assets/js/vendor/jquery-ui.min.js"></script>
         {/* <script src="assets/js/vendor/aos.js"></script>
         <script src="assets/js/vendor/smoothscroll.min.js"></script>
         <script src="assets/js/vendor/jquery.fancybox.min.js"></script>

@@ -12,7 +12,7 @@ export default function FacilitiesPage() {
                                 <div className="row">
                                     <div className="col-12">
                                         <div className="rx-banner-contact">
-                                            <h2>Facilities</h2>
+                                            <h1>Facilities</h1>
                                         </div>
                                     </div>
                                 </div>

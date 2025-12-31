@@ -4,6 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { imageTosvg } from '@/utils/imageToSvg';
 import Link from 'next/link';
+import Image from 'next/image';
 export const NearByPlace = ({ initialNearByPlace = [] }) => {
     const [isAOSInitialized, setIsAOSInitialized] = useState(false);
     const [isClient, setIsClient] = useState(false);
@@ -81,13 +82,13 @@ export const NearByPlace = ({ initialNearByPlace = [] }) => {
                             <div className="rx-spa-card">
                                 <Link href={`/near-by-place/${place.slug}`}>
                                     <div className="spa-img">
-                                        <img
+                                        <Image
                                             src={place.image_url}
                                             alt={place.title}
                                             className="w-full object-cover"
-                                            onError={(e) => {
-                                                e.target.src = 'assets/img/placeholder-image.jpg';
-                                            }}
+                                           width={200}
+                                           height={200}
+                                           sizes='300'
                                         />
                                     </div>
                                     <div className="spa-contact p-4">
