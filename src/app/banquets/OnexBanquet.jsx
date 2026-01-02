@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { imageTosvg } from '@/utils/imageToSvg';
@@ -12,21 +12,9 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-export const OnexBanquet = () => {
-    const galleryImages = [
-        { id: 1, src: "assets/img/gallery/1.jpg", alt: "gallery-1" },
-        { id: 2, src: "assets/img/gallery/2.jpg", alt: "gallery-2" },
-        { id: 3, src: "assets/img/gallery/3.jpg", alt: "gallery-3" },
-        { id: 4, src: "assets/img/gallery/4.jpg", alt: "gallery-4" },
-        { id: 5, src: "assets/img/gallery/5.jpg", alt: "gallery-5" },
-        { id: 6, src: "assets/img/gallery/6.jpg", alt: "gallery-6" },
-        { id: 7, src: "assets/img/gallery/7.jpg", alt: "gallery-7" },
-        { id: 8, src: "assets/img/gallery/8.jpg", alt: "gallery-8" },
-        { id: 9, src: "assets/img/gallery/9.jpg", alt: "gallery-9" },
-        { id: 10, src: "assets/img/gallery/10.jpg", alt: "gallery-10" },
-        { id: 11, src: "assets/img/gallery/11.jpg", alt: "gallery-11" },
-        { id: 12, src: "assets/img/gallery/12.jpg", alt: "gallery-12" },
-    ];
+export const OnexBanquet = ({ onexData }) => {
+    const [isLoading, setIsLoading] = useState(!onexData);
+    const [banquetData, setBanquetData] = useState(onexData?.data || null);
 
     useEffect(() => {
         AOS.init({
@@ -34,17 +22,28 @@ export const OnexBanquet = () => {
             once: true,
             offset: 100,
         });
-        if (typeof window !== 'undefined') {
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', () => {
-                    imageTosvg();
-                });
-            } else {
-                imageTosvg();
-            }
-        }
+        
     }, []);
+    const galleryImages = banquetData?.images?.map((img, index) => ({
+        id: img.id || index + 1,
+        src: img.image_url,
+        alt: `onex-banquet-${index + 1}`
+    })) || defaultGalleryImages;
 
+    if (isLoading) {
+        return (
+            <section className="section-gallery padding-tb-50 banquate">
+                <div className="container">
+                    <div className="text-center py-10">
+                        <div className="spinner-border text-primary" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                        <p className="mt-3">Loading banquet details...</p>
+                    </div>
+                </div>
+            </section>
+        );
+    }
     return (
         <section className="section-gallery padding-tb-50 banquate">
             <div className="container">
