@@ -1,10 +1,21 @@
 "use client";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { imageTosvg } from '@/utils/imageToSvg';
 
-export default function contactUsPage() {
+export default function ContactUsPage() {
+    const [formData, setFormData] = useState({
+        title: 'Contact Page Enquiry',
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+    const [errors, setErrors] = useState({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null);
+    const [submitMessage, setSubmitMessage] = useState('');
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -21,8 +32,120 @@ export default function contactUsPage() {
             }
         }
     }, []);
+    const handleChange = (e) => {
+        const { id, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [id]: value
+        }));
+        if (errors[id]) {
+            setErrors(prev => ({
+                ...prev,
+                [id]: ''
+            }));
+        }
+        if (submitStatus) {
+            setSubmitStatus(null);
+            setSubmitMessage('');
+        }
+    };
 
+    const validateForm = () => {
+        const newErrors = {};
+        if (!formData.name.trim()) {
+            newErrors.name = 'Name is required';
+        } else if (formData.name.trim().length < 3) {
+            newErrors.name = 'Name must be at least 3 characters';
+        } else if (formData.name.trim().length > 100) {
+            newErrors.name = 'Name cannot exceed 100 characters';
+        }
+        if (!formData.email.trim()) {
+            newErrors.email = 'Email is required';
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            newErrors.email = 'Please enter a valid email address';
+        } else if (formData.email.length > 150) {
+            newErrors.email = 'Email cannot exceed 150 characters';
+        }
+        if (!formData.subject.trim()) {
+            newErrors.subject = 'Subject is required';
+        } else if (formData.subject.trim().length < 3) {
+            newErrors.subject = 'Subject must be at least 3 characters';
+        } else if (formData.subject.trim().length > 150) {
+            newErrors.subject = 'Subject cannot exceed 150 characters';
+        }
+        if (!formData.message.trim()) {
+            newErrors.message = 'Message is required';
+        } else if (formData.message.trim().length < 10) {
+            newErrors.message = 'Message must be at least 10 characters';
+        }
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (!validateForm()) {
+            return;
+        }
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+        setSubmitMessage('');
+        try {
+            const enquiryData = {
+                title: formData.title,
+                name: formData.name.trim(),
+                email: formData.email.trim(),
+                subject: formData.subject.trim(),
+                message: formData.message.trim()
+            };
+            const response = await fetch('https://www.inforbit.in/demo/hotel-elegance-backend/api/enquiry', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify(enquiryData)
+            });
+            const result = await response.json();
+            if (response.ok && result.status === true) {
+                setFormData({
+                    title: 'Contact Page Enquiry',
+                    name: '',
+                    email: '',
+                    subject: '',
+                    message: ''
+                });
+                setSubmitStatus('success');
+                setSubmitMessage(result.message || 'Message sent successfully! We will contact you soon.');
+                setTimeout(() => {
+                    document.querySelector('.rx-contact-form')?.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }, 100);
+
+            } else {
+                setSubmitStatus('error');
+                if (result.errors) {
+                    const serverErrors = {};
+                    Object.keys(result.errors).forEach(key => {
+                        serverErrors[key] = result.errors[key][0];
+                    });
+                    setErrors(serverErrors);
+                    setSubmitMessage('Please correct the errors below.');
+                } else {
+                    setSubmitMessage(result.message || 'Failed to submit enquiry. Please try again.');
+                }
+            }
+
+        } catch (error) {
+            console.error('Enquiry submission error:', error);
+            setSubmitStatus('error');
+            setSubmitMessage('Network error. Please check your connection and try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <>
@@ -158,68 +281,153 @@ export default function contactUsPage() {
             </section>
             <section className="section-contact padding-t-40 padding-b-100">
                 <div className="container">
-                    <h2 className="d-none">Contact</h2>
                     <div className="row">
                         <div className="col-12" data-aos="fade-up" data-aos-duration={1000}>
-                            <div className="rx-contact-form bg-gradient-to-tr from-[#410f06] via-[#410f06] to-[#aa833f] backdrop-blur-sm rounded-2xl p-4 border border-gray-700/50">
+                            <div className="rx-contact-form bg-gradient-to-tr from-[#410f06] via-[#410f06] to-[#aa833f] backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-gray-700/50">
+
+                                {/* Success/Error Messages */}
+                                {submitStatus === 'success' && (
+                                    <div className="mb-6 p-4 bg-green-500/20 border border-green-500/30 rounded-lg">
+                                        <div className="flex items-center">
+                                            <div className="flex-shrink-0">
+                                                <svg className="h-5 w-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <div className="ml-3">
+                                                <p className="text-sm font-medium text-green-200">
+                                                    ✓ {submitMessage}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {submitStatus === 'error' && submitMessage && (
+                                    <div className="mb-6 p-4 bg-red-500/20 border border-red-500/30 rounded-lg">
+                                        <div className="flex items-center">
+                                            <div className="flex-shrink-0">
+                                                <svg className="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <div className="ml-3">
+                                                <p className="text-sm font-medium text-red-200">
+                                                    ✗ {submitMessage}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+
                                 <div className="row mb-minus-24">
                                     <div className="col-lg-6 col-12 mb-24">
                                         <div className="rx-contact-touch-ifrem">
-                                            <iframe src="https://maps.google.com/maps?width=1405&height=568&hl=en&q=Kakarmatta N.10/60 AM Kakarmatta, DLW Varanasi (U.P) 221106, Varanasi, Uttar Pradesh 221004&t=&z=14&ie=UTF8&iwloc=B&output=embed" />
+                                            <iframe
+                                                src="https://maps.google.com/maps?width=1405&height=568&hl=en&q=Kakarmatta N.10/60 AM Kakarmatta, DLW Varanasi (U.P) 221106, Varanasi, Uttar Pradesh 221004&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+                                                className="w-full h-[400px] rounded-lg"
+                                                title="Hotel Elegance Location"
+                                            />
                                         </div>
                                     </div>
+
                                     <div className="col-lg-6 col-12 mb-24">
                                         <div className="rx-inner-form">
-                                            <form action="#">
+                                            <form onSubmit={handleSubmit}>
                                                 <div className="row">
                                                     <div className="col-lg-6 col-12 mb-24">
                                                         <div className="rx-input-box">
-                                                            <label htmlFor="firstname" className="text-white">Your Name*</label>
+                                                            <label htmlFor="name" className="text-white">Your Name*</label>
                                                             <input
                                                                 type="text"
-                                                                id="firstname"
-                                                                className="rx-form-control"
-                                                                required=""
+                                                                id="name"
+                                                                value={formData.name}
+                                                                onChange={handleChange}
+                                                                className={`rx-form-control ${errors.name ? 'border-red-500' : ''}`}
+                                                                disabled={isSubmitting}
                                                             />
+                                                            {errors.name && (
+                                                                <div className="text-white text-sm mt-1">{errors.name}</div>
+                                                            )}
                                                         </div>
                                                     </div>
+
                                                     <div className="col-lg-6 col-12 mb-24">
                                                         <div className="rx-input-box">
                                                             <label htmlFor="email" className="text-white">Your Email*</label>
                                                             <input
                                                                 type="email"
                                                                 id="email"
-                                                                className="rx-form-control"
-                                                                required=""
+                                                                value={formData.email}
+                                                                onChange={handleChange}
+                                                                className={`rx-form-control ${errors.email ? 'border-red-500' : ''}`}
+                                                                disabled={isSubmitting}
                                                             />
+                                                            {errors.email && (
+                                                                <div className="text-white text-sm mt-1">{errors.email}</div>
+                                                            )}
                                                         </div>
                                                     </div>
+
                                                     <div className="col-12 mb-24">
                                                         <div className="rx-input-box">
                                                             <label htmlFor="subject" className="text-white">Your Subject*</label>
                                                             <input
                                                                 type="text"
                                                                 id="subject"
-                                                                className="rx-form-control"
-                                                                required=""
+                                                                value={formData.subject}
+                                                                onChange={handleChange}
+                                                                className={`rx-form-control ${errors.subject ? 'border-red-500' : ''}`}
+                                                                disabled={isSubmitting}
                                                             />
+                                                            {errors.subject && (
+                                                                <div className="text-white text-sm mt-1">{errors.subject}</div>
+                                                            )}
                                                         </div>
                                                     </div>
+
                                                     <div className="col-12 mb-24">
                                                         <div className="rx-input-box">
                                                             <label htmlFor="message" className="text-white">Message*</label>
                                                             <textarea
-                                                                className="rx-form-control"
                                                                 id="message"
-                                                                defaultValue={""}
+                                                                value={formData.message}
+                                                                onChange={handleChange}
+                                                                className={`rx-form-control ${errors.message ? 'border-red-500' : ''}`}
+                                                                rows="4"
+                                                                disabled={isSubmitting}
                                                             />
+                                                            {errors.message && (
+                                                                <div className="text-white text-sm mt-1">{errors.message}</div>
+                                                            )}
+                                                            <div className="text-right mt-1">
+                                                                <span className={`text-xs ${formData.message.length < 10 ? 'text-red-300' : 'text-gray-300'}`}>
+                                                                    {formData.message.length}/10 min characters
+                                                                </span>
+                                                            </div>
                                                         </div>
                                                     </div>
+
                                                     <div className="col-12">
                                                         <div className="rx-inner-button">
-                                                            <button type="button" className="rx-btn-two rounded">
-                                                                Send Message
+                                                            <button
+                                                                type="submit"
+                                                                className="rx-btn-two rounded flex items-center justify-center"
+                                                                disabled={isSubmitting}
+                                                            >
+                                                                {isSubmitting ? (
+                                                                    <>
+                                                                        <svg className="animate-spin h-5 w-5 mr-3 text-white" viewBox="0 0 24 24">
+                                                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                                                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                                                                        </svg>
+                                                                        Sending...
+                                                                    </>
+                                                                ) : (
+                                                                    'Send Message'
+                                                                )}
                                                             </button>
+                                                           
                                                         </div>
                                                     </div>
                                                 </div>
@@ -232,7 +440,6 @@ export default function contactUsPage() {
                     </div>
                 </div>
             </section>
-
         </>
     )
 }

@@ -75,7 +75,7 @@ export default function Banner({ initialVideo }) {
                                     <Button
                                         variant={"outline"}
                                         className={cn(
-                                            "w-full justify-start text-left font-normal px-1",
+                                            "w-full justify-start text-left font-normal px-1 py-3 rounded",
                                             !arrivalDate && "text-muted-foreground"
                                         )}
                                         id="arrival"
@@ -111,7 +111,7 @@ export default function Banner({ initialVideo }) {
                                     <Button
                                         variant={"outline"}
                                         className={cn(
-                                            "w-full justify-start text-left font-normal px-1",
+                                            "w-full justify-start text-left font-normal px-1 py-3 rounded",
                                             !departureDate && "text-muted-foreground"
                                         )}
                                         id="departure"
