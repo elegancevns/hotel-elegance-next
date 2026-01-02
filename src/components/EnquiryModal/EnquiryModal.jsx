@@ -180,10 +180,10 @@ const EnquiryModal = ({ isOpen, onClose, title = "Contact Us" }) => {
                                     </svg>
                                 </div>
                                 <div className="ml-3">
-                                    <p className="text-sm font-medium text-green-200">
+                                    <p className="text-sm font-medium text-white">
                                         ✓ Enquiry submitted successfully!
                                     </p>
-                                    <p className="mt-1 text-sm text-green-100">
+                                    <p className="mt-1 text-sm text-white">
                                         Thank you for contacting us. We'll get back to you shortly.
                                     </p>
                                     <p className="mt-1 text-xs text-green-100 opacity-80">
@@ -203,7 +203,7 @@ const EnquiryModal = ({ isOpen, onClose, title = "Contact Us" }) => {
                                     </svg>
                                 </div>
                                 <div className="ml-3">
-                                    <p className="text-sm font-medium text-red-200">
+                                    <p className="text-sm font-medium text-white">
                                         ✗ {serverError}
                                     </p>
                                 </div>
