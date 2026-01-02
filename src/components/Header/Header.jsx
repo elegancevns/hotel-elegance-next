@@ -154,7 +154,7 @@ export const Header = () => {
                                     <div className="header-button">
                                         <a
                                             href="javascript:void(0)"
-                                            className="rx-btn-one"
+                                            className="rx-btn-one rounded"
                                             data-bs-toggle="modal"
                                             data-bs-target="#rx_booking_from"
                                         >

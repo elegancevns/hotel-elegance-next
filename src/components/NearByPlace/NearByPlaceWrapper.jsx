@@ -9,8 +9,7 @@ async function getNearByPlaceUrl() {
         if (!res.ok) {
             throw new Error(`Failed to fetch Near by place Status: ${res.status}`);
         }
-        const data = await res.json();
-        //console.log(data);
+        const data = await res.json(); 
         if (data && data.data) {
             return data.data;
         }
