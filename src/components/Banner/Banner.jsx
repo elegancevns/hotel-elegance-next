@@ -35,8 +35,6 @@ export default function Banner({ initialVideo }) {
             alert("Booking request submitted!");
         }, 1000);
     };
-
-    // Handle video loading
     useEffect(() => {
         if (initialVideo) {
             setVideoLoading(true);
@@ -59,7 +57,6 @@ export default function Banner({ initialVideo }) {
                 <div className="row">
                     <div className="col-12">
                         <div className="youtube-video-container relative">
-                            {/* Video Skeleton Loader */}
                             {videoLoading && (
                                 <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-pulse z-10 flex items-center justify-center">
                                     <div className="text-center">
@@ -68,8 +65,6 @@ export default function Banner({ initialVideo }) {
                                     </div>
                                 </div>
                             )}
-
-                            {/* Video Error State */}
                             {videoError && !videoLoading && (
                                 <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 z-10 flex items-center justify-center">
                                     <div className="text-center p-8">
@@ -83,8 +78,6 @@ export default function Banner({ initialVideo }) {
                                     </div>
                                 </div>
                             )}
-
-                            {/* Video Content */}
                             <div className="youtube-video-wrapper relative">
                                 {initialVideo && !videoError && (
                                     <video
@@ -119,31 +112,22 @@ export default function Banner({ initialVideo }) {
                 {videoLoading ? (
                     <div className="container desktop animate-pulse">
                         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 p-4 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg">
-                            {/* Arrival Date Skeleton */}
                             <div className="flex flex-col space-y-2 w-full">
                                 <div className="h-4 bg-gray-300 rounded w-1/2 mb-1"></div>
                                 <div className="h-10 bg-gray-200 rounded"></div>
                             </div>
-
-                            {/* Departure Date Skeleton */}
                             <div className="flex flex-col space-y-2 w-full">
                                 <div className="h-4 bg-gray-300 rounded w-1/2 mb-1"></div>
                                 <div className="h-10 bg-gray-200 rounded"></div>
                             </div>
-
-                            {/* Adults Select Skeleton */}
                             <div className="flex flex-col space-y-2 w-full">
                                 <div className="h-4 bg-gray-300 rounded w-1/2 mb-1"></div>
                                 <div className="h-10 bg-gray-200 rounded"></div>
                             </div>
-
-                            {/* Phone Number Skeleton */}
                             <div className="flex flex-col space-y-2 w-full">
                                 <div className="h-4 bg-gray-300 rounded w-1/2 mb-1"></div>
                                 <div className="h-10 bg-gray-200 rounded"></div>
                             </div>
-
-                            {/* Submit Button Skeleton */}
                             <div className="flex flex-col space-y-2 w-full self-end">
                                 <div className="h-11 bg-gray-300 rounded"></div>
                             </div>
@@ -151,9 +135,7 @@ export default function Banner({ initialVideo }) {
                     </div>
                 ) : (
                     <form id="book-now-form" onSubmit={handleSubmit}>
-                        <div className="container desktop">
-
-                            {/* Arrival Date */}
+                        <div className="container desktop rounded">
                             <div className="flex flex-col space-y-2 w-full">
                                 <Label htmlFor="arrival" className="text-sm font-medium text-gray-700 heading">
                                     Arrive

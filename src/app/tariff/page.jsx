@@ -1,12 +1,14 @@
 "use client";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { imageTosvg } from '@/utils/imageToSvg';
 import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card';
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
-
+import EnquiryModal from '@/components/EnquiryModal/EnquiryModal'; 
 export default function tariffPage() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [title, setTitle] = useState("");
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -190,6 +192,10 @@ export default function tariffPage() {
                                                             transition-all duration-300
                                                             shadow-lg hover:shadow-xl
                                                             hover:scale-[1.02] active:scale-[0.98]"
+                                                            onClick={() => {
+                                                            setTitle(room.title)
+                                                            setIsModalOpen(true)
+                                                        }}
                                                     >
                                                         Book Now
                                                         <span className="ml-2">→</span>
@@ -373,6 +379,11 @@ export default function tariffPage() {
                     </div>
                 </div>
             </section>
+            <EnquiryModal 
+                isOpen={isModalOpen} 
+                title = {title}
+                onClose={() => setIsModalOpen(false)} 
+            />
         </>
     )
 }

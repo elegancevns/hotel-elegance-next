@@ -1,10 +1,13 @@
 "use client";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { imageTosvg } from '@/utils/imageToSvg';
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
+import EnquiryModal from '@/components/EnquiryModal/EnquiryModal';  
 export default function RoomsPage() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [title, setTitle] = useState("");
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -53,7 +56,11 @@ export default function RoomsPage() {
                                             </ul>
                                         </div>
                                         <div className="rx-button">
-                                            <a href="#" className="rx-btn-one">
+                                            <a className="rx-btn-one cursor-pointer"  
+                                            onClick={() => {
+                                                setTitle("Suite Room")
+                                                setIsModalOpen(true)
+                                                }}>
                                                 Book Now
                                             </a>
                                         </div>
@@ -84,7 +91,11 @@ export default function RoomsPage() {
                                             </ul>
                                         </div>
                                         <div className="rx-button">
-                                            <a href="#" className="rx-btn-one">
+                                            <a className="rx-btn-one cursor-pointer"  
+                                            onClick={() => {
+                                                setTitle("Premium Rooms")
+                                                setIsModalOpen(true)
+                                                }}>
                                                 Book Now
                                             </a>
                                         </div>
@@ -115,7 +126,11 @@ export default function RoomsPage() {
                                             </ul>
                                         </div>
                                         <div className="rx-button">
-                                            <a href="#" className="rx-btn-one">
+                                            <a className="rx-btn-one cursor-pointer"  
+                                            onClick={() => {
+                                                setTitle("King Size Rooms")
+                                                setIsModalOpen(true)
+                                                }}>
                                                 Book Now
                                             </a>
                                         </div>
@@ -126,6 +141,11 @@ export default function RoomsPage() {
                     </div>
                 </div>
             </section>
+            <EnquiryModal 
+                isOpen={isModalOpen} 
+                title = {title}
+                onClose={() => setIsModalOpen(false)} 
+            />
         </>
     )
 }
