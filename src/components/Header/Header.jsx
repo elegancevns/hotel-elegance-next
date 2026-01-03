@@ -28,7 +28,6 @@ export const Header = () => {
         };
     }, []);
 
-    // Close mobile menu when route changes
     useEffect(() => {
         closeMobileMenu();
     }, [pathname]);
