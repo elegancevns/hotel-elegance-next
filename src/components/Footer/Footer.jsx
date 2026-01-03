@@ -12,7 +12,7 @@ const Footer = () => {
                                 <div className="rx-social-media footer-widget--about">
                                     <div className="mobile-flex">
                                         <div className="rx-logo">
-                                            <img src="assets/dev-img/logo/logo-bg.jpg" alt="logo" />
+                                            <img src="/assets/dev-img/logo/logo-bg.jpg" alt="logo" />
                                         </div>
                                         <div className="inner-contact">
                                             <p>
