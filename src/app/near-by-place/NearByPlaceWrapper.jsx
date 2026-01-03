@@ -5,9 +5,6 @@ async function getNearByPlaceUrl() {
     try {
         const res = await fetch(
             "https://www.inforbit.in/demo/hotel-elegance-backend/api/near-by-pace-list",
-            {
-                next: { revalidate: 3600 },
-            }
         );
 
         if (!res.ok) {
