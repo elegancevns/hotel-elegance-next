@@ -229,22 +229,22 @@ export const Header = () => {
                     <div className="rx-menu-contact">
                         <ul>
                             <li>
-                                <Link href="/rooms">
+                                <Link href="/hotel-rooms-in-varanasi">
                                     Rooms
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/restaurant">
+                                <Link href="/budget-restaurant-varanasi">
                                     Restaurant
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/banquets">
+                                <Link href="/best-banquet-budget-varanasi">
                                     Banquets
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/tafri-lounge">
+                                <Link href="/best-lounge-varansasi-tafri-elegance">
                                     Tafri Lounge
                                 </Link>
                             </li>

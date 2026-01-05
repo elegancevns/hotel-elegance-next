@@ -1,13 +1,14 @@
 import React from 'react';
 import AlbumGallery from './AlbumGallery';
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
+
 async function getAlbumGallery(albumId = null) {
     try {
         let url = 'https://www.inforbit.in/demo/hotel-elegance-backend/api/album-gallery';
         if (albumId) {
             url += `?album_id=${albumId}`;
         }
-        const res = await fetch(url, {});
+        const res = await fetch(url);
         if (!res.ok) {
             throw new Error(`Failed to fetch gallery data: ${res.status}`);
         }
@@ -18,9 +19,11 @@ async function getAlbumGallery(albumId = null) {
     }
 }
 
-export async function generateMetadata() {
+export async function generateMetadata({ searchParams }) {
     try {
-        const data = await getAlbumGallery();
+        const params = await searchParams;
+        const albumId = params?.album_id || null;
+        const data = await getAlbumGallery(albumId);
 
         if (!data?.status) {
             return {
@@ -28,6 +31,7 @@ export async function generateMetadata() {
                 description: 'Explore our gallery showcasing Hotel Elegance amenities, rooms, and facilities',
             };
         }
+
         return {
             title: `${data.data.selected_album.title} Gallery - Hotel Elegance`,
             description: `Browse ${data.data.total_images} images from our ${data.data.selected_album.title} gallery at Hotel Elegance Varanasi`,
@@ -41,12 +45,14 @@ export async function generateMetadata() {
 }
 
 export default async function GalleryPage({ searchParams }) {
-    const albumId = searchParams?.album_id || null;
+    const params = await searchParams;
+    const albumId = params?.album_id || null;
     const galleryData = await getAlbumGallery(albumId);
+
     return (
         <>
-            <Breadcrumb 
-                title="Gallery" 
+            <Breadcrumb
+                title="Gallery"
                 backgroundImage="/assets/img/banner/banner.jpg"
                 subtitle=""
             />

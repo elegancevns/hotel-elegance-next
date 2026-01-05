@@ -29,11 +29,19 @@ export default function Home() {
       <OurBestServices/>
       <AccommodationDining/>
       <BestRoom/>
-      <TestimonialsWrapper/>
-      <NearByPlaceWrapper/>
+      <Suspense fallback={<div>Loading Testimonials...</div>}>
+        <TestimonialsWrapper/>
+      </Suspense>
+      <Suspense fallback={<div>Loading Nearby Places...</div>}>
+        <NearByPlaceWrapper/>
+      </Suspense>
       <PositionedUnique/>
-      <NearByAttractionWrapper/>
-      <FlyersWrapper/>
+      <Suspense fallback={<div>Loading Nearby Attractions...</div>}>
+        <NearByAttractionWrapper/>
+      </Suspense>
+      <Suspense fallback={<div>Loading Flyers...</div>}>
+        <FlyersWrapper/>
+      </Suspense>
     </>
   );
 }
