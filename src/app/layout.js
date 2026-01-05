@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
         <div className="page-wraper">
           <Header />
           {children}
-           <ToastDisplay />
+          <ToastDisplay />
           <Footer />
         </div>
         <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script>
