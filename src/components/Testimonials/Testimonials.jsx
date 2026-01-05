@@ -78,7 +78,7 @@ export const Testimonials = ({ initialTestimonials = [] }) => {
             {/* <div className="overlay-welcome" /> */}
             <div className="container">
                 <div className="row justify-content-md-center">
-                    <div className="col-12" data-aos="fade-up" data-aos-duration="1000">
+                    <div className="col-12">
                         <div className="rx-banner text-center rx-banner-effects">
                             <p>
                                 <img
