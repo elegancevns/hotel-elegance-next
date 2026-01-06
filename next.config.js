@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "www.theelegance.co.in",
+        hostname: "www.inforbit.in",
       },
     ],
   },
