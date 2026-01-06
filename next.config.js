@@ -12,6 +12,16 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/restaurant.php",
+        destination: "/budget-restaurant-varanasi",
+        permanent: true,
+      },
+      {
+        source: "/banquet.php",
+        destination: "/best-banquet-budget-varanasi",
+        permanent: true,
+      },
+      {
         source: "/:slug*.php",
         destination: "/:slug*",
         permanent: true,
