@@ -4,9 +4,19 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "www.inforbit.in",
+        hostname: "www.theelegance.co.in",
       },
     ],
+  },
+
+  async redirects() {
+    return [
+      {
+        source: "/:slug*.php",
+        destination: "/:slug*",
+        permanent: true,
+      },
+    ];
   },
 };
 
