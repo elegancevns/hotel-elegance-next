@@ -16,7 +16,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 export const NearbyByAttraction = ({ initialAttractions = [] }) => {  
     return (
-        <section className="section-contact padding-t-50 padding-b-100 home-map-bg">
+        <section className="section-contact padding-t-50 padding-b-50 home-map-bg">
             <div className="container">
                 <div className="row">
                     <div className="col-12">

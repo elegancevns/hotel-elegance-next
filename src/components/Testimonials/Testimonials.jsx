@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { imageTosvg } from '@/utils/imageToSvg';
+import { LeftShapeSVG, RightShapeSVG } from '../SVG/BannerShapes';
 import {
     Carousel,
     CarouselContent,
@@ -16,7 +16,6 @@ export const Testimonials = ({ initialTestimonials = [] }) => {
     const [testimonials, setTestimonials] = useState([]);
 
     useEffect(() => {
-        // Transform API data to match your component structure
         if (initialTestimonials && initialTestimonials.length > 0) {
             const transformedTestimonials = initialTestimonials.map((item, index) => ({
                 id: item.id || index + 1,
@@ -35,24 +34,7 @@ export const Testimonials = ({ initialTestimonials = [] }) => {
             }));
             setTestimonials(transformedTestimonials);
         }
-    }, [initialTestimonials]);
-
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100,
-        });
-        if (typeof window !== 'undefined') {
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', () => {
-                    imageTosvg();
-                });
-            } else {
-                imageTosvg();
-            }
-        }
-    }, []);
+    }, [initialTestimonials]);    
 
     const renderRatingBar = (score) => (
         <div className="rating-bar">
@@ -81,17 +63,9 @@ export const Testimonials = ({ initialTestimonials = [] }) => {
                     <div className="col-12">
                         <div className="rx-banner text-center rx-banner-effects">
                             <p>
-                                <img
-                                    src="assets/img/banner/left-shape.svg"
-                                    alt="banner-left-shape"
-                                    className="svg-img left-side"
-                                />
+                                <LeftShapeSVG/>
                                 Testimonials (Trip Advisor)
-                                <img
-                                    src="assets/img/banner/right-shape.svg"
-                                    alt="banner-right-shape"
-                                    className="svg-img right-side"
-                                />
+                                <RightShapeSVG/>
                             </p>
                             <h4>
                                 Our Happy <span>Guests Say</span>

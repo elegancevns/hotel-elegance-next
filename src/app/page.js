@@ -15,6 +15,7 @@ import NearByPlaceWrapper from "@/components/NearByPlace/NearByPlaceWrapper";
 import NearByAttractionWrapper from "@/components/NearbyByAttraction/NearByAttractionWrapper";
 import FlyersWrapper from "@/components/Flyers/FlyersWrapper";
 import TestimonialsWrapper from "@/components/Testimonials/TestimonialsWrapper";
+import HomeBlogWrapper from "@/components/HomeBlog/HomeBlogWrapper";
 export const metadata = pageMeta(
   "The Elegance Best Hotel in Varanasi near Railway Station", 
   "The Elegance - Best Boutique Hotel in Varanasi near Banaras Railway Station and BHU. Situated close to BLW, the Hotel is the best place for Stay in Varanasi."
@@ -38,10 +39,14 @@ export default function Home() {
       <PositionedUnique/>
       <Suspense fallback={<div>Loading Nearby Attractions...</div>}>
         <NearByAttractionWrapper/>
+      </Suspense>      
+      <Suspense fallback={<div>Loading Blog...</div>}>
+        <HomeBlogWrapper/>
       </Suspense>
       <Suspense fallback={<div>Loading Flyers...</div>}>
         <FlyersWrapper/>
       </Suspense>
+
     </>
   );
 }
