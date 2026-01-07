@@ -1,4 +1,3 @@
-// utils/svgAnimation.js
 export const imageTosvg = () => {
   if (typeof window !== 'undefined' && window.jQuery) {
     $(document).ready(function () {
