@@ -114,7 +114,7 @@ export const OurBestServices = () => {
                                 <ul>
                                     <li>- Restaurant &amp; Cafe</li>
                                     <li>- Lounge</li>
-                                    
+                                    <li>- Roof Top Restaurant</li>
                                     <li>- Room service</li>
                                 </ul>
                             </div>
@@ -137,9 +137,9 @@ export const OurBestServices = () => {
                             <div className="services-contact">
                                 <h5>Multi-Cuisine</h5>
                                 <ul>
-                                    <li>- Chinese Cuisine</li>
+                                    <li>- Mughlai & Chinese Cuisine</li>
                                     <li>- Continental Cuisine</li>
-                                    <li>- Delcious Breakfast</li>
+                                    <li>- Delicious Breakfast</li>
                                     <li>- Catering for Events</li>
                                 </ul>
                             </div>
