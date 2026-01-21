@@ -55,7 +55,7 @@ export default async function TafriLoungePage() {
                                     <img alt="banner-left-shape" className="svg-img left-side"
                                         src="assets/img/banner/left-shape.svg"
                                     />
-                                    One of Top Places to Chill in Banaras
+                                    Tafri Lounge
                                     <img alt="banner-right-shape" className="svg-img right-side" src="assets/img/banner/right-shape.svg"
                                     />
                                 </p>
