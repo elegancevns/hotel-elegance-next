@@ -1094,15 +1094,15 @@ input::placeholder,
   }
 
   .padding-tb-100 {
-    padding: 70px 0;
+    padding: 35px 0;
   }
 
   .padding-t-100 {
-    padding-top: 70px;
+    padding-top: 35px;
   }
 
   .padding-b-100 {
-    padding-bottom: 70px !important;
+    padding-bottom: 35px !important;
   }
 
   .padding-tb-50 {
@@ -1193,9 +1193,9 @@ input::placeholder,
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-align: center;
+    /* -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
+    align-items: center; */
   }
 
   .rx-footer-inner-contact .rx-footer-left-side-contact {
@@ -6211,7 +6211,6 @@ figure {
  #book-room .container input[type=text] {
     border: none;
     width: 100%;
-    text-align: center;
 }
 #book-room .container input[type=text], 
 #book-room .container input[type=submit] {
@@ -6241,7 +6240,6 @@ figure {
 .book-now-widget#book-room .container input[type=text] {
     border: none;
     width: 100%;
-    text-align: center;
 }
  #book-room .container {
     display: -webkit-box;
@@ -6901,7 +6899,16 @@ figure {
     color: #555555;
     font-weight: 400;
 }
-
+.gallery-button{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+.gallery-masonry-container .gallery-button button{
+    font-size: 15px;
+  }
 @media screen and (max-width: 991px) {
   header .rx-header {
     position: relative;
@@ -6927,24 +6934,27 @@ figure {
   }
   .book-now-widget#book-room .container{
     width: 100%;
-    outline: 2px solid #410f06;
   }
   #book-room .container .row {
       width: auto;
-      padding: 0 5px 0 5px;
-      justify-content: center;
+      padding: 0 0px 0 0px;
+      margin: 0 8px 0 8px;
   }
+  .section-breadcrumb.padding-b-50 {
+        padding-bottom: 0px;
+  }  
   #book-room .container.desktop{
     display: block;
   }
   #book-room .container .book-grid{
-      width: 80%;
+      width: 50%;
       text-align: unset;
       border-right: none;
-      padding: 5px 10px;
-      
+     padding: 7px 5px;
   }
-  
+  #book-room .container .book-grid:last-child {
+      width: 100%;
+  }
   .order-md-1{
     order: 1;
   }
@@ -6952,7 +6962,7 @@ figure {
     order: 2;
   }
   .rx-footer-items .rx-items-contact ul li{
-    padding: 2px 0 2px 12px;
+    padding: 2px 0 2px 0px;
   }
   header .header-fixed{
     padding: 10px 0 !important;
@@ -7028,11 +7038,11 @@ figure {
   .footer-widget--contact{
     padding-left: 7px;
     padding-top: 3px;
-    text-align: center;
+    /* text-align: center; */
   }
   .rx-footer-items .rx-items-heading::after{
-    right: 0;
-    margin: auto;
+    /* right: 0;
+    margin: auto; */
   }
   .rx-footer-items .rx-items-contact ul li::after{
     display: none;
@@ -7056,13 +7066,18 @@ figure {
   .services-section-2 .services-item .services-image a figure{
     border-radius: 10px;
   }
+  .gallery-masonry-container .gallery-button button{
+    font-size: 13px;
+  }
+  .gallery-masonry-container .gallery-button button{
+        flex: 0 0 48%;
+        width: 48%;
+  }
   .gallery-masonry-container .gallery-button {
       display: flex;
-      gap: 0px;
-      white-space: nowrap;
-      overflow-x: auto;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
   }
+
   .rx-blog-details .rx-blog-details-cart .blog-details-contact h1{
     font-size: 24px;
   }
@@ -7080,6 +7095,15 @@ figure {
   }
   .other-hotel-section h5.other-hotel-head{
     font-size: 24px;
+  }
+  .tarrif-pages .room-t4{
+    font-size: 18px;
+  }
+  .tarrif-pages .mb-6{
+    margin-bottom: 6px;
+  }
+  .tarrif-pages .pt-6{
+    padding-top: 6px;
   }
 }
 

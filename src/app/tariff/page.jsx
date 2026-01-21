@@ -63,7 +63,7 @@ export default function tariffPage() {
                 mobileBackgroundImage="/assets/dev-img/bread-banner/mobile/Tariff.jpg"
                 subtitle=""
             />
-            <section className="section-menu padding-t-100 padding-b-20">
+            <section className="section-menu padding-t-100 padding-b-20 tarrif-pages">
                 <div className="container">
                     <div className="row justify-content-md-center">
                         <div className="col-md-8" data-aos="fade-up" data-aos-duration={1000}>
@@ -134,14 +134,14 @@ export default function tariffPage() {
                                                     translateZ="50"
                                                     className="text-2xl font-bold text-black mb-2"
                                                 >
-                                                    <h4 className="text-[#410f06]">{room.title}</h4>
+                                                    <h4 className="room-t4 text-[#410f06]">{room.title}</h4>
                                                 </CardItem>
                                                 <div className="mb-6">
                                                     <div className="flex flex-wrap gap-2 mt-4">
                                                         {room.features.map((feature, idx) => (
                                                             <span
                                                                 key={idx}
-                                                                className="px-3 py-1.5 bg-gray-50
+                                                                className="room-tspan px-3 py-1.5 bg-gray-50
                                                                     text-xs font-medium rounded-full 
                                                                     border border-gray-200">
                                                                 {feature}

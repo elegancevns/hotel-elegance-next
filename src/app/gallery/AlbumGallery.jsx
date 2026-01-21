@@ -82,13 +82,13 @@ export default function AlbumGallery({ initialData, currentAlbumId }) {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="mb-10">
-                                <div className="flex justify-center gap-3 gallery-button">
+                                <div className="gallery-button">
                                     {albums.map((album) => (
                                         <button
                                             key={album.id}
                                             onClick={() => handleAlbumClick(album.id)}
                                             disabled={loadingAlbum === album.id || album.is_active}
-                                            className={`rounded px-3 py-2.5 text-base! font-semibold transition-all ${
+                                            className={`rounded px-3 py-2.5 text-base font-semibold transition-all ${
                                                 album.is_active 
                                                     ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white' 
                                                     :'rounded px-6 py-2.5 text-sm font-semibold bg-gradient-to-r bg-amber-900 text-white '

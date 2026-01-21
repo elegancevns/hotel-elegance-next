@@ -196,7 +196,7 @@ export default function Banner({ initialVideo }) {
                                                 id="arrival"
                                                 disabled={isSubmitted}
                                             >
-                                                <CalendarIcon className="mr-2 h-4 w-4" />
+                                                <CalendarIcon className="mr-1 h-4 w-4" />
                                                 {arrivalDate ? format(arrivalDate, "PPP") : "Arrival Date"}
                                             </Button>
                                         </PopoverTrigger>
@@ -227,13 +227,13 @@ export default function Banner({ initialVideo }) {
                                             <Button
                                                 variant={"outline"}
                                                 className={cn(
-                                                    "w-full justify-start text-left font-normal px-1 py-3 rounded",
+                                                    "w-full justify-start text-left font-normal px-3 py-2 rounded",
                                                     !departureDate && "text-muted-foreground"
                                                 )}
                                                 id="departure"
                                                 disabled={!arrivalDate || isSubmitted}
                                             >
-                                                <CalendarIcon className="mr-2 h-4 w-4" />
+                                                <CalendarIcon className="mr-1 h-4 w-4" />
                                                 {departureDate ? format(departureDate, "PPP") : "Departure Date"}
                                             </Button>
                                         </PopoverTrigger>
