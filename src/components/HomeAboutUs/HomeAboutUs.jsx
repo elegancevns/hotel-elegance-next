@@ -68,8 +68,8 @@ export const HomeAboutUs = () => {
                   Discover the essence of elegance and luxury at Hotel Elegance in
                   Varanasi, where every stay is a blend of comfort, convenience, and
                   unparalleled hospitality. Situated just 6 kilometers from the
-                  heart of Varanasi, and 1 kilometer from Varanasi Station, our
-                  <strong>hotel in Varanasi</strong> offers a harmonious retreat for
+                  heart of Varanasi, and 1 kilometer from Varanasi Station, our 
+                  <strong>Hotel in Varanasi</strong> offers a harmonious retreat for
                   both leisure and business travelers. Whether you're seeking{" "}
                   <strong>the best hotel in Varanasi</strong>, a charming hotel in
                   the city, or a convenient option near DLW Varanasi, Hotel Elegance
@@ -84,19 +84,19 @@ export const HomeAboutUs = () => {
                   <div className="row mb-minus-24">
                     <div className="col-sm-4 col-12 rx-575-50 mb-24">
                       <div className="rx-about-box" data-aos="zoom-in" data-aos-delay="300">
-                        <h5>Creative Planning</h5>
+                        <h5>Unmatched Hospitality</h5>
                         {/* <p>Awards</p> */}
                       </div>
                     </div>
                     <div className="col-sm-4 col-12 rx-575-50 mb-24 mt-24">
                       <div className="rx-about-box" data-aos="zoom-in" data-aos-delay="400">
-                        <h5>Elegant Designs</h5>
+                        <h5>Close to Key Destinations</h5>
                         {/* <p>Visitors</p> */}
                       </div>
                     </div>
                     <div className="col-sm-4 col-12 rx-575-50 mb-24">
                       <div className="rx-about-box" data-aos="zoom-in" data-aos-delay="500">
-                        <h5>Seamless Execution</h5>
+                        <h5>For Family & Business both</h5>
                         {/* <p>Events</p> */}
                       </div>
                     </div>

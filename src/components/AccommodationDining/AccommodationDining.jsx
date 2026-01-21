@@ -20,7 +20,7 @@ export const AccommodationDining = () => {
     const [items] = React.useState([
         {
             id: 1,
-            bigImage: "assets/dev-img/accommodation/big-img/multi-cuisiner-restaurant.jpg",
+            bigImage: "https://www.inforbit.in/demo/hotel-elegance-backend/public/storage/gallery/gallery_6957666b5d1e0.webp",
             logo: "assets/dev-img/accommodation/multi-cuisine-restaurant.jpeg",
             title: "Multi-Cuisine Restaurant",
             subtitle: "Best in Banaras",
@@ -38,7 +38,7 @@ export const AccommodationDining = () => {
             id: 3,
             bigImage: "assets/dev-img/accommodation/big-img/bar-and-lounge.jpg",
             logo: "assets/dev-img/accommodation/bar-and-lounge.png",
-            title: "Bar & Lounge",
+            title: "Lounge",
             subtitle: "For Best Evenings",
             description: "Welcome to the newest hotspot in Varanasi, the exquisite Tafri Bar & Lounge at The Elegance Hotel. Nestled within one of the city's top 10 hotels, our lounge offers an unparalleled experience for locals and visitors alike."
         },

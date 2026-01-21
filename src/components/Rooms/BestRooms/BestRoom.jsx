@@ -59,7 +59,7 @@ export const BestRoom = () => {
                                 <div className="inner-back-side">
                                     <div className="sub-title">
                                         <h5>Suite Room</h5>
-                                        <span className="rx-price">2500Rs / N</span>
+                                        <span className="rx-price">Rs. 7500 / N</span>
                                     </div>
                                     <div className="inner-info">
                                         <ul>
@@ -94,7 +94,7 @@ export const BestRoom = () => {
                                 <div className="inner-back-side">
                                     <div className="sub-title">
                                         <h5>Premium Rooms</h5>
-                                        <span className="rx-price">3000Rs. / N</span>
+                                        <span className="rx-price">Rs. 6000 / N</span>
                                     </div>
                                     <div className="inner-info">
                                         <ul>
@@ -128,8 +128,8 @@ export const BestRoom = () => {
                                 <img src="assets/dev-img/room/king-size-room.jpg" alt="room-6" />
                                 <div className="inner-back-side">
                                     <div className="sub-title">
-                                        <h5>King Size Rooms</h5>
-                                        <span className="rx-price">5000Rs. / N</span>
+                                        <h5>Standard Rooms</h5>
+                                        <span className="rx-price">Rs. 5000 / N</span>
                                     </div>
                                     <div className="inner-info">
                                         <ul>
@@ -142,7 +142,7 @@ export const BestRoom = () => {
                                     <div className="rx-button">
                                         <a className="rx-btn-one cursor-pointer"  
                                         onClick={() => {
-                                            setTitle("King Size Rooms")
+                                            setTitle("Standard Rooms")
                                             setIsModalOpen(true)
                                             }}>
                                             Book Now
