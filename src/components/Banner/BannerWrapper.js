@@ -7,8 +7,9 @@ async function getVideoUrl() {
     if (!res.ok) {
       throw new Error(`Failed to fetch video. Status: ${res.status}`);
     }
+    
     const data = await res.json();
-    if (data && data.data && data.data.video) {
+    if (data && data.data) {
       return data.data.video;
     }
     throw new Error("Video URL not found in response");

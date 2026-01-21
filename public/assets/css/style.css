@@ -6927,23 +6927,24 @@ figure {
   }
   .book-now-widget#book-room .container{
     width: 100%;
+    outline: 2px solid #410f06;
   }
   #book-room .container .row {
       width: auto;
       padding: 0 5px 0 5px;
+      justify-content: center;
   }
   #book-room .container.desktop{
     display: block;
   }
   #book-room .container .book-grid{
-      width: 50%;
+      width: 80%;
       text-align: unset;
       border-right: none;
       padding: 5px 10px;
+      
   }
-  #book-room .container .book-grid:last-child {
-      width: 100%;
-  }
+  
   .order-md-1{
     order: 1;
   }
