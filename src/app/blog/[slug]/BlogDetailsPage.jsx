@@ -55,12 +55,7 @@ export default function BlogDetailsPage({ blog }) {
                                         {blog.content && (
                                             <div className="blog-content" dangerouslySetInnerHTML={renderHTML(blog.content)}
                                             />
-                                        )} 
-                                        <ul>
-                                            <li>About 80% of women with PCOS will ovulate with medication</li>
-                                            <li>Approximately 50-60% will conceive within 6 cycles of ovulation induction</li>
-                                            <li>IVF success rates for PCOS patients are often comparable to other infertility causes</li>
-                                        </ul>  
+                                        )}
                                     </div>
                                     <div className="blog_paragraphs mb-3">
                                         {blog.paragraphs && blog.paragraphs.map((paragraph, index) => (
