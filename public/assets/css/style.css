@@ -6909,7 +6909,26 @@ figure {
 .gallery-masonry-container .gallery-button button{
     font-size: 15px;
   }
+.testimonials-flex{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.rx-banner-effects .testimonials-flex a{
+    width: 140px;
+}
+.rx-banner-effects .testimonials-flex img{
+    width: 100%;
+}
 @media screen and (max-width: 991px) {
+  .rx-banner-effects .testimonials-flex a{
+      width: 120px;
+  }
+  .testimonials-first .rx-banner h4 {
+      color: #fff;
+      -webkit-text-fill-color: unset;
+  }
   header .rx-header {
     position: relative;
   }

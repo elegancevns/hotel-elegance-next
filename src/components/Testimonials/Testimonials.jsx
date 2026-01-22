@@ -62,9 +62,11 @@ export const Testimonials = ({ initialTestimonials = [] }) => {
                 <div className="row justify-content-md-center">
                     <div className="col-12">
                         <div className="rx-banner text-center rx-banner-effects">
-                            <p>
+                            <p className="testimonials-flex mb-2">
                                 <LeftShapeSVG/>
-                                Testimonials (Trip Advisor)
+                                <a href="https://www.tripadvisor.in/Hotel_Review-g297685-d23708537-Reviews-The_Elegance_Hotel-Varanasi_Varanasi_District_Uttar_Pradesh.html" target="_blank" aria-label="Tripadvisor Logo">
+                                    <img src="assets/dev-img/Tripadvisor-Logo.png" alt="Tripadvisor Logo" />
+                                </a>
                                 <RightShapeSVG/>
                             </p>
                             <h4>

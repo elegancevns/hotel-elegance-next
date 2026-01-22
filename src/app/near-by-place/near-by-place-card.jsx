@@ -3,7 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 export function NeatByPlaceListPage({ initialNearByPlace }) {
     const [nearByPlaces, setNearByPlaces] = useState(initialNearByPlace || []);
     useEffect(() => {
@@ -23,24 +23,12 @@ export function NeatByPlaceListPage({ initialNearByPlace }) {
     return (
         <>
             {/* Breadcrumb */}
-            <section className="section-breadcrumb">
-                <div className="rx-breadcrumb-image">
-                    <div className="rx-breadcrumb-overlay" />
-                    <div className="inner-breadcrumb-contact sub_header_content">
-                        <div className="main-breadcrumb-contact">
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-12">
-                                        <div className="rx-banner-contact">
-                                            <h1>Near By Place</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <Breadcrumb
+                title="Near By Places"
+                backgroundImage="/assets/dev-img/bread-banner/Rooms.jpg"
+                mobileBackgroundImage="/assets/dev-img/bread-banner/mobile/Rooms.jpg"
+                subtitle=""
+            />
             <section className="section-spa padding-tb-50 near-by-place">
                 <div className="container">
                     <div className="row mb-minus-24">

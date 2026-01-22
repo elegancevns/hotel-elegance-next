@@ -103,11 +103,13 @@ export default function RoomsPage() {
                                 </div>
                             </div>
                         </div>
-                        {roomsData.pageContent.intro.map((paragraph, index) => (
-                            <p key={index} className="mb-2 text-lg leading-relaxed">
-                                {paragraph}
-                            </p>
-                        ))}
+                        <div>
+                            {roomsData.pageContent.intro.map((paragraph, index) => (
+                                <p key={index} className="mb-2 text-lg leading-relaxed">
+                                    {paragraph}
+                                </p>
+                            ))}
+                        </div>
                     </div>
 
                     {/* Rooms Grid */}

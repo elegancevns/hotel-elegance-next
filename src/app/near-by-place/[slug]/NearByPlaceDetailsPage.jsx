@@ -4,6 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 export default function NearByPlaceDetailsPage({ initialData }) {
     const { data: place, recent_posts } = initialData;
     useEffect(() => {
@@ -16,25 +17,12 @@ export default function NearByPlaceDetailsPage({ initialData }) {
 
     return (
         <>
-            <section className="section-breadcrumb">
-                <div className="rx-breadcrumb-image">
-                    <div className="rx-breadcrumb-overlay" />
-                    <div className="inner-breadcrumb-contact sub_header_content">
-                        <div className="main-breadcrumb-contact">
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-12">
-                                        <div className="rx-banner-contact">
-                                            <h1>{place.title}</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            <Breadcrumb
+                title={place.title}
+                backgroundImage="/assets/dev-img/bread-banner/Rooms.jpg"
+                mobileBackgroundImage="/assets/dev-img/bread-banner/mobile/Rooms.jpg"
+                subtitle=""
+            />
             <section className="section-blog-details padding-t-50 padding-b-100">
                 <div className="container">
                     <div className="row mb-minus-24">
