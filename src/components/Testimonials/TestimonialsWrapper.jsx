@@ -1,9 +1,7 @@
 async function getTestimonialsUrl() {
     try {
         const res = await fetch(
-            "https://www.inforbit.in/demo/hotel-elegance-backend/api/testimonials-home", {
-                cache: "no-store"
-            }
+            "https://www.inforbit.in/demo/hotel-elegance-backend/api/testimonials-home"
         );
 
         if (!res.ok) {
