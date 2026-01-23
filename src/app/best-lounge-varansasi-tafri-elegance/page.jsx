@@ -42,7 +42,7 @@ export default async function TafriLoungePage() {
                 mobileBackgroundImage="/assets/dev-img/bread-banner/mobile/Tafri-Lounge.jpg"
                 subtitle=""
             />
-            <section className="section-menu padding-t-50 padding-b-50">
+            <section className="section-menu padding-b-50">
                 <div className="container">
                     <div className="row">
                         <div
