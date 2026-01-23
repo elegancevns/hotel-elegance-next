@@ -31,7 +31,7 @@ export default function RestaurantPage() {
                 subtitle=""
             />
             {/* Menu */}
-            <section className="section-menu padding-t-100 padding-b-50">
+            <section className="section-menu padding-b-50">
                 <div className="container">
                     <div className="row">
                         <div className="col-12" data-aos="fade-up" data-aos-duration={1000}>
