@@ -73,12 +73,12 @@ export default function RoomsPage() {
         <>
             <Breadcrumb
                 title={roomsData.pageContent.breadcrumbTitle}
-                backgroundImage="/assets/dev-img/bread-banner/Rooms.jpg"
+                backgroundImage="/assets/dev-img/bread-banner/elegance-rooms-varanasi.jpeg"
                 mobileBackgroundImage="/assets/dev-img/bread-banner/mobile/Rooms.jpg"
                 subtitle=""
             />
             {/* Hero Introduction Section */}
-            <section className="section-room padding-t-50 padding-b-50 bg-gradient-to-b from-white to-gray-50">
+            <section className="section-room padding-b-50 bg-gradient-to-b from-white to-gray-50">
                 <div className="container mx-auto px-4">
                     <div className="max-w-6xl mx-auto text-center mb-10">
                         <div className="row">

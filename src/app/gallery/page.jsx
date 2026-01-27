@@ -8,7 +8,7 @@ async function getAlbumGallery(albumId = null) {
         if (albumId) {
             url += `?album_id=${albumId}`;
         }
-        const res = await fetch(url, { cache: "no-store" });
+        const res = await fetch(url);
         if (!res.ok) {
             throw new Error(`Failed to fetch gallery data: ${res.status}`);
         }
@@ -53,7 +53,7 @@ export default async function GalleryPage({ searchParams }) {
         <>
             <Breadcrumb
                 title="Gallery"
-                backgroundImage="/assets/img/banner/banner.jpg"
+                backgroundImage="/assets/dev-img/bread-banner/elegance-best-hotel-varanasi.jpeg"
                 mobileBackgroundImage="/assets/dev-img/bread-banner/mobile/Gallery.jpg"
                 subtitle=""
             />

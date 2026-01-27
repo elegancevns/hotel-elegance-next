@@ -3,9 +3,7 @@ import BlogDetailsPage from "./BlogDetailsPage";
 async function getBlogDetails(slug) {
     try {
         const apiUrl = `https://www.inforbit.in/demo/hotel-elegance-backend/api/blog/${slug}`;
-        const res = await fetch(apiUrl, {
-            cache: "no-store"
-        });
+        const res = await fetch(apiUrl);
         if (!res.ok) {
             console.error("Blog API failed:", res.status);
             return null;

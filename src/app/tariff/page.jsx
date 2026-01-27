@@ -59,11 +59,11 @@ export default function tariffPage() {
             {/* Breadcrumb */}
             <Breadcrumb 
                 title="Tariff" 
-                backgroundImage="/assets/dev-img/bread-banner/Tariff.jpg"
+                backgroundImage="/assets/dev-img/bread-banner/best=room-rates-varanasi.jpeg"
                 mobileBackgroundImage="/assets/dev-img/bread-banner/mobile/Tariff.jpg"
                 subtitle=""
             />
-            <section className="section-menu padding-t-100 padding-b-20 tarrif-pages">
+            <section className="section-menu padding-b-20 tarrif-pages">
                 <div className="container">
                     <div className="row justify-content-md-center">
                         <div className="col-md-8" data-aos="fade-up" data-aos-duration={1000}>
@@ -74,7 +74,7 @@ export default function tariffPage() {
                                         alt="banner-left-shape"
                                         className="svg-img left-side"
                                     />
-                                    Tariff Rooms
+                                    Room Tariffs
                                     <img
                                         src="assets/img/banner/right-shape.svg"
                                         alt="banner-right-shape"
@@ -82,7 +82,7 @@ export default function tariffPage() {
                                     />
                                 </p>
                                 <h1 className="text-4xl md:text-5xl font-bold mt-4 text-black">
-                                    Best Tariff Rooms in Varanasi
+                                    Best Room Tariff in Varanasi
                                 </h1>
                                 <p className="mt-6 text-lg text-black max-w-3xl mx-auto">
                                     Are you planning a trip to Varanasi, India's heart of spirit? We'll guide you to the best spots to stay. Varanasi's got history and charm, and we want you comfy on your trip. Here's the best rooms at The Elegance Hotel:
@@ -368,16 +368,7 @@ export default function tariffPage() {
                             </p>
                         </div>
                     </div>
-                    <div className="mt-2">
-                        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 md:gap-4">
-                            <div className="noteThat bg-amber-50 border-l-4 border-amber-500 rounded-r-lg p-2 mb-2"> 
-                                <p className="text-blck mb-0">
-                                    <strong>Please Note:</strong>
-                                     In case of any Cancellation from the Hotel side, or failure in part of commitment from the Hotel regarding Room Reservations, we will refund the Advance amount paid by the Customer as well as additional Rs.1000 penalty per room. 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </section>
             <EnquiryModal 

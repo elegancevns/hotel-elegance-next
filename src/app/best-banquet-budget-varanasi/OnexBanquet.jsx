@@ -98,7 +98,7 @@ const OnexBanquet = ({ onexData }) => {
 
     if (isLoading) {
         return (
-            <section className="section-gallery padding-tb-50 banquate">
+            <section className="section-gallery banquate">
                 <div className="container">
                     <div className="text-center py-10">
                         <div className="spinner-border text-primary" role="status">
@@ -112,7 +112,7 @@ const OnexBanquet = ({ onexData }) => {
     }
 
     return (
-        <section className="section-gallery padding-tb-50 banquate">
+        <section className="section-gallery banquate">
             <div className="container">
                 <div className="row mb-minus-24 justify-content-md-center">
                     <div className="col-md-8" data-aos="fade-up" data-aos-duration="1000">
