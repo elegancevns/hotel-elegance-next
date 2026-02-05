@@ -29,17 +29,26 @@ export async function generateMetadata({ searchParams }) {
             return {
                 title: 'Inside The Elegance Varanasi | Hotel, Rooms & Events',
                 description: 'Take a visual tour of The Elegance Varanasi. View hotel rooms, restaurant, banquet halls, and event spaces that define comfort and style.',
+                alternates: {
+                    canonical: "https://www.theelegance.co.in/gallery",
+                },
             };
         }
 
         return {
             title: `${data.data.selected_album.title} Gallery - Hotel Elegance`,
             description: `Browse ${data.data.total_images} images from our ${data.data.selected_album.title} gallery at Hotel Elegance Varanasi`,
+            alternates: {
+                canonical: "https://www.theelegance.co.in/gallery",
+            },
         };
     } catch (error) {
         return {
             title: 'Inside The Elegance Varanasi | Hotel, Rooms & Events',
             description: 'Take a visual tour of The Elegance Varanasi. View hotel rooms, restaurant, banquet halls, and event spaces that define comfort and style.',
+            alternates: {
+                canonical: "https://www.theelegance.co.in/gallery",
+            },
         };
     }
 }
