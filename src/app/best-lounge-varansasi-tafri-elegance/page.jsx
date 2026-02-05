@@ -23,11 +23,17 @@ export async function generateMetadata() {
         return {
             title: 'Best Lounge in Varanasi for Food, Drinks & Vibes',
             description: 'Unwind at one of the best lounges in Varanasi. Enjoy great food, refreshing drinks, and a lively ambience at Tafri – The Elegance Lounge.',
+            alternates: {
+                canonical: "https://www.theelegance.co.in/best-lounge-varansasi-tafri-elegance",
+            },
         };
     } catch (error) {
         return {
             title: 'Best Lounge in Varanasi for Food, Drinks & Vibes',
             description: 'Unwind at one of the best lounges in Varanasi. Enjoy great food, refreshing drinks, and a lively ambience at Tafri – The Elegance Lounge.',
+            alternates: {
+                canonical: "https://www.theelegance.co.in/best-lounge-varansasi-tafri-elegance",
+            },
         };
     }
 }

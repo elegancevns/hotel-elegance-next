@@ -17,26 +17,35 @@ async function getNearByPlaceDetails(slug) {
     }
 }
 export async function generateMetadata({ params }) {
-    try {
-        const { slug } = await params;
-        const data = await getNearByPlaceDetails(slug);
-        if (!data?.status) {
-            return {
-                title: 'Place Not Found - Hotel Elegance',
-            };
-        }
-        return {
-            title: data.data.meta_title || `${data.data.title} - Hotel Elegance`,
-            description: data.data.meta_description || data.data.short_desc,
-        };
-    } catch (error) {
-        console.error('Error in generateMetadata:', error);
-        return {
-            title: 'Nearby Place - Hotel Elegance',
-            description: 'Explore nearby places from Hotel Elegance',
-        };
+  try {
+    const { slug } = await params;
+    const data = await getNearByPlaceDetails(slug);
+    if (!data?.status) {
+      return {
+        title: "Place Not Found - Hotel Elegance",
+        description: "Nearby place information not available",
+      };
     }
+    return {
+      title:
+        data.data.meta_title ||
+        `${data.data.title} - Hotel Elegance`,
+      description:
+        data.data.meta_description ||
+        data.data.short_desc,
+      alternates: {
+        canonical: `https://www.theelegance.co.in/near-by-place/${slug}`,
+      },
+    };
+
+  } catch (error) {
+    return {
+      title: "Nearby Place - Hotel Elegance",
+      description: "Explore nearby places from Hotel Elegance",
+    };
+  }
 }
+
 export default async function page({ params }) {
     try {
         const { slug } = await params;

@@ -34,22 +34,28 @@ async function getSapphireBanquetData() {
     }
 }
 export async function generateMetadata() {
-    try {
-        const onexData = await getOnexBanquetData();
-        
-        if (!onexData?.status) {
-            return {
-                title: 'Best Budget Banquet in Varanasi for Weddings & Events',
-                description: 'Planning an event in Varanasi? Book a spacious, elegant banquet at budget-friendly prices. Ideal for weddings, parties, and celebrations.',
-            };
-        }
-    } catch (error) {
-        return {
-            title: 'Banquets - Hotel Elegance',
-            description: 'Premium banquet halls for your special celebrations',
-        };
-    }
+  try {
+    const onexData = await getOnexBanquetData();
+    const title ="Best Budget Banquet Hall in Varanasi | Events & Celebrations";
+    const description = "Find the best budget banquet hall in Varanasi for weddings, parties, and corporate events with spacious halls, great service, and elegant décor.";
+    return {
+      title: title,
+      description: description,
+      alternates: {
+        canonical: "https://www.theelegance.co.in/best-banquet-budget-varanasi",
+      },
+    };
+  } catch (error) {
+    return {
+      title: "Banquets - Hotel Elegance",
+      description: "Premium banquet halls for your special celebrations",
+      alternates: {
+        canonical: "https://www.theelegance.co.in/best-banquet-budget-varanasi",
+      },
+    };
+  }
 }
+
 
 export default async function BanquetsPage() {
     const [onexData, sapphireData] = await Promise.all([

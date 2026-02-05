@@ -23,11 +23,17 @@ export async function generateMetadata() {
         return {
             title: 'Hotel Facilities at The Elegance Varanasi | Comfort Assured',
             description: `Explore modern hotel facilities at The Elegance Varanasi. From comfort to convenience, everything is designed for a relaxing stay and events.`,
+            alternates: {
+                canonical: "https://www.theelegance.co.in/facilities",
+            },
         };
     } catch (error) {
         return {
             title: 'Hotel Facilities at The Elegance Varanasi | Comfort Assured',
             description: `Explore modern hotel facilities at The Elegance Varanasi. From comfort to convenience, everything is designed for a relaxing stay and events.`,
+            alternates: {
+                canonical: "https://www.theelegance.co.in/facilities",
+            },
         };
     }
 }

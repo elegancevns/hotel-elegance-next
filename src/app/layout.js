@@ -3,10 +3,19 @@ import Footer from "@/components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
 import { ToastDisplay } from '@/components/ui/toast';
 import Script from "next/script";
+// export const metadata = {
+//   title: "The Elegance Best Hotel in Varanasi near Railway Station",
+//   description:
+//     "The Elegance - Best Boutique Hotel in Varanasi near Banaras Railway Station and BHU. Situated close to BLW, the Hotel is the best place for Stay in Varanasi.",
+// };
+
 export const metadata = {
-  title: "The Elegance Best Hotel in Varanasi near Railway Station",
-  description:
-    "The Elegance - Best Boutique Hotel in Varanasi near Banaras Railway Station and BHU. Situated close to BLW, the Hotel is the best place for Stay in Varanasi.",
+  metadataBase: new URL('https://www.theelegance.co.in'),
+  title: {
+    default: "The Elegance Best Hotel in Varanasi near Railway Station",
+    template: "%s | The Elegance Hotel"
+  },
+  description: "The Elegance - Best Boutique Hotel in Varanasi near Banaras Railway Station and BHU. Situated close to BLW, the Hotel is the best place for Stay in Varanasi.",
 };
 
 export default function RootLayout({ children }) {
@@ -31,7 +40,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="assets/css/vendor/owl.carousel.min.css" />
         <link rel="stylesheet" href="assets/css/vendor/swiper-bundle.min.css" /> */}
         {/* Main Style */}
-        <link rel="stylesheet" href="/assets/css/style.css?v=6.0.0" />        
+        <link rel="stylesheet" href="/assets/css/style.css?v=7.0.0" />        
       </head>
       <body>
         <div className="page-wraper">
