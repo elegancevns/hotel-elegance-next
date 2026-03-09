@@ -157,6 +157,7 @@ const SapphireBanquet = ({ sapphireData }) => {
                         </div>
                     </div>
                 </div>
+                
                 <div className="row mb-minus-24">
                     <div className="col-12" data-aos="fade-up" data-aos-duration="1000">
                         <div className="relative">
