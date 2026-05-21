@@ -3,6 +3,8 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { imageTosvg } from '@/utils/imageToSvg';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
+import { Fancybox } from '@fancyapps/ui';
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 export default function RestaurantPage() {
     useEffect(() => {
@@ -10,6 +12,24 @@ export default function RestaurantPage() {
             duration: 1000,
             once: true,
             offset: 100,
+        });
+        Fancybox.bind("[data-fancybox='restaurant-gallery']", {
+            Thumbs: {
+                autoStart: true,
+            },
+            Toolbar: {
+                display: {
+                    left: ["infobar"],
+                    middle: ["zoomIn", "zoomOut", "toggle1to1", "rotateCCW", "rotateCW", "flipX", "flipY"],
+                    right: ["slideshow", "download", "thumbs", "close"],
+                },
+            },
+            Images: {
+                zoom: true,
+                zoomOpacity: "auto",
+                click: "close",
+                wheel: "slide",
+            },
         });
         if (typeof window !== 'undefined') {
             if (document.readyState === 'loading') {
@@ -20,12 +40,37 @@ export default function RestaurantPage() {
                 imageTosvg();
             }
         }
+        return () => {
+            Fancybox.destroy();
+        };
     }, []);
+    const galleryImages = [
+        {
+            id: 1,
+            src: "/assets/dev-img/restaurant/restaurant-1.jpg",
+            alt: "Restaurant Gallery 1",
+        },
+        {
+            id: 2,
+            src: "/assets/dev-img/restaurant/restaurant-2.jpg",
+            alt: "Restaurant Gallery 2",
+        },
+        {
+            id: 3,
+            src: "/assets/dev-img/restaurant/restaurant-3.jpg",
+            alt: "Restaurant Gallery 3",
+        },
+        {
+            id: 4,
+            src: "/assets/dev-img/restaurant/restaurant-4.jpg",
+            alt: "Restaurant Gallery 4",
+        }
+    ];
     return (
         <>
             {/* Breadcrumb */}
-            <Breadcrumb 
-                title="Restaurant" 
+            <Breadcrumb
+                title="Restaurant"
                 backgroundImage="/assets/dev-img/bread-banner/best-restaurant-varanasi-elegance.jpeg"
                 mobileBackgroundImage="/assets/dev-img/bread-banner/mobile/resturant.jpg"
                 subtitle=""
@@ -133,6 +178,36 @@ export default function RestaurantPage() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <section className="gallery-budget pb-10">
+                <div className="container">
+                    <div className="row masonry-grid">
+                        {galleryImages.map((image, index) => (
+                            <div
+                                key={image.id}
+                                className="col-xl-3 col-lg-4 col-sm-6 col-12 mb-24 masonry-item"
+                                data-aos="flip-left">
+                                <div className="rx-gallery-card-two">
+                                    <a className="rx-gallery-img block overflow-hidden rounded-lg group relative block"
+                                        href={image.src}
+                                        data-fancybox="restaurant-gallery"
+                                        data-caption="Restaurant Gallery"
+                                    >
+                                        <img
+                                            src={image.src}
+                                            alt={image.alt}
+                                            loading="lazy"
+                                            className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                                        />
+                                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                            <i className="fas fa-search-plus text-white text-3xl"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
