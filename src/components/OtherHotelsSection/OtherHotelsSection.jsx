@@ -56,13 +56,13 @@ const OtherHotelsSection = () => {
                                     02
                                 </span>
                             </div>
-                            <h2 className="text-2xl font-semibold text-white">Dev Elegance</h2>
-                             <span className="text-xs font-medium text-white/80 uppercase tracking-widest">
+                            <h2 className="text-2xl font-semibold text-white">Dev residency (A unit of the elegance hotel)</h2>
+                            {/* <span className="text-xs font-medium text-white/80 uppercase tracking-widest">
                             A Unit of The Elegance  
-                            </span>
+                            </span> */}
                             <hr className="border-white/20 my-1" />                           
                             <p className="text-sm text-white leading-relaxed flex-1">
-                                Dev Residency – One of the best 3-star and budget hotels in Varanasi. Conveniently located near Kashi Vishwanath Temple, close to Dashashwamedh Ghat, and near Varanasi Railway Station, offering a comfortable stay in the heart of Kashi.
+                               Dev Residency – A Unit of The Elegance, is one of the best 3-star budget hotels in Varanasi, offering a peaceful and comfortable stay with modern facilities for families, tourists, and business travelers.
                             </p>
                             <a
                                 href="https://www.devtheelegance.com/"
