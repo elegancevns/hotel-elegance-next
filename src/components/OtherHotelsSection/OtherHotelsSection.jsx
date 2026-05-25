@@ -58,7 +58,7 @@ const OtherHotelsSection = () => {
                             </div>
                             <h2 className="text-2xl font-semibold text-white">Dev Residency </h2>
                             <span className="text-[15px] font-medium text-white/80 uppercase tracking-widest">
-                            (A UNIT OF THE ELEGANCE HOTEL) 
+                            (A UNIT OF THE ELEGANCE) 
                             </span>
                             <hr className="border-white/20 my-1" />                           
                             <p className="text-sm text-white leading-relaxed flex-1">
