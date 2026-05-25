@@ -62,7 +62,7 @@ const OtherHotelsSection = () => {
                             </span>
                             <hr className="border-white/20 my-1" />                           
                             <p className="text-sm text-white leading-relaxed flex-1">
-                               Dev Residency – A  UNIT OF THE ELEGANCE, is one of the best 3-star budget hotels in Varanasi, offering a peaceful and comfortable stay with modern facilities for families, tourists, and business travelers.
+                              Dev Residency – A UNIT OF THE ELEGANCE, is one of the best 3-star budget hotels in Varanasi, conveniently located near Banaras Hindu University, Assi Ghat, and Sankat Mochan Hanuman Temple, offering a peaceful and comfortable stay for families, tourists, and business travelers.
                             </p>
                             <a
                                 href="https://www.devtheelegance.com/"
