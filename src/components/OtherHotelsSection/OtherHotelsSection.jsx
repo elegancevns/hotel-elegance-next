@@ -50,19 +50,19 @@ const OtherHotelsSection = () => {
                         <div className="p-4 flex flex-col gap-2.5 bg-[#9a5e2a] text-white lg:order-1 order-2">
                             <div className="flex items-center justify-between">
                                 <span className="text-xs font-medium text-white/80 uppercase tracking-widest">
-                                    Gandhi Nagar, Naria Road, Varanasi - 221005
+                                    Varanasi, Uttar Pradesh
                                 </span>
                                 <span className="text-4xl font-semibold text-white/60 leading-none">
                                     02
                                 </span>
                             </div>
-                            <h2 className="text-2xl font-semibold text-white">Dev Residency (A unit of the elegance hotel)</h2>
-                            {/* <span className="text-xs font-medium text-white/80 uppercase tracking-widest">
-                            A Unit of The Elegance  
-                            </span> */}
+                            <h2 className="text-2xl font-semibold text-white">Dev Residency </h2>
+                            <span className="text-[15px] font-medium text-white/80 uppercase tracking-widest">
+                            (A UNIT OF THE ELEGANCE) 
+                            </span>
                             <hr className="border-white/20 my-1" />                           
                             <p className="text-sm text-white leading-relaxed flex-1">
-                               Dev Residency – A Unit of The Elegance, is one of the best 3-star budget hotels in Varanasi, offering a peaceful and comfortable stay with modern facilities for families, tourists, and business travelers.
+                               Dev Residency – A  UNIT OF THE ELEGANCE, is one of the best 3-star budget hotels in Varanasi, offering a peaceful and comfortable stay with modern facilities for families, tourists, and business travelers.
                             </p>
                             <a
                                 href="https://www.devtheelegance.com/"
