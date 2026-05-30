@@ -82,7 +82,7 @@ export default function RoomsListPage() {
             />
             {/* Hero Introduction Section */}
             <section className="section-room padding-b-50 bg-gradient-to-b from-white to-gray-50">
-                <div className="container mx-auto px-4">
+                <div className="container">
                     <div className="max-w-6xl mx-auto text-center mb-10">
                         <div className="row">
                             <div className="col-12" data-aos="fade-up" data-aos-duration={1000}>
@@ -163,7 +163,7 @@ export default function RoomsListPage() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="p-6">
+                                <div className="lg:p-4 md:p-2 mt-2 p-2">
                                     <p className="text-gray-600 mb-4 line-clamp-3">
                                         {room.description}
                                     </p>
@@ -201,7 +201,7 @@ export default function RoomsListPage() {
 
                     {/* Detailed Description Section */}
                     <div className="max-w-8xl mx-auto">
-                        <div className="bg-gradient-to-tr from-[#410f06] via-[#410f06] to-[#aa833f] backdrop-blur-sm rounded-2xl p-8 shadow-xl">
+                        <div className="bg-gradient-to-tr from-[#410f06] via-[#410f06] to-[#aa833f] backdrop-blur-sm rounded-2xl p-3! lg:p-8!  shadow-xl">
                             <div className="flex flex-col lg:flex-row items-center gap-8">
                                 <div className="lg:w-2/3">
                                     <div className="flex items-center gap-3 mb-6">
@@ -239,7 +239,7 @@ export default function RoomsListPage() {
                                 </div>
 
                                 <div className="lg:w-1/3">
-                                    <div className="bg-white p-6 rounded-2xl shadow-lg border border-amber-100">
+                                    <div className="bg-white p-3! lg:p-6! rounded-2xl shadow-lg border border-amber-100">
                                         <h4 className="text-xl font-bold text-gray-900 mb-4">
                                             Special Offer
                                         </h4>

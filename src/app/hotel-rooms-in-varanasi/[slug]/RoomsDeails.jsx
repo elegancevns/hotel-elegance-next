@@ -130,8 +130,8 @@ export default function RoomDetailPage() {
                 subtitle=""
             />
             <section className="py-12 bg-gradient-to-b from-white to-gray-50">
-                <div className="container mx-auto px-4">
-                    <div className="max-w-7xl mx-auto">
+                <div className="container">
+                    <div className="">
                         <div className="mb-8">
                             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-4">
                                 <div>
@@ -166,8 +166,8 @@ export default function RoomDetailPage() {
                             </div>
                         </div>
 
-                        <div className="grid lg:grid-cols-3 gap-8">
-                            <div className="lg:col-span-2">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 overflow-hidden!">
+                            <div className=" lg:col-span-2 w-full col-span-1">
                                 {/* Main Carousel */}
                                 <div className="mb-4">
                                     <div className="relative rounded-3xl overflow-hidden shadow-2xl">
@@ -292,12 +292,9 @@ export default function RoomDetailPage() {
                                 </div>
 
                                 {/* Room Features */}
-                                <div className="bg-white rounded-3xl shadow-xl p-6 my-6">
-                                    <h2 className="text-2xl font-serif font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                        <div className="w-10 h-10 bg-gradient-to-br from-[#aa833f] to-[#aa833f] rounded-xl flex items-center justify-center">
-                                            <Sparkles className="w-5 h-5 text-white" />
-                                        </div>
-                                        <span>Room Features & Specifications</span>
+                                <div className="bg-white rounded-3xl shadow-xl p-3 lg:p-6 my-6">
+                                    <h2 className="text-[20px]! lg:text-[22px]! text-gray-900 mb-4 flex items-center gap-3">                                        
+                                       Room Features & Specifications
                                     </h2>
                                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                         {roomFeatures.map((feature, index) => (
