@@ -69,8 +69,13 @@ export const Testimonials = ({ initialTestimonials = [] }) => {
                                 </a>
                                 <RightShapeSVG/>
                             </p>
-                            <h4>
-                                Our Happy <span>Guests Say</span>
+                            <h4
+                                className="text-white"
+                                style={{
+                                    WebkitTextFillColor: "unset",
+                                    backgroundImage: "none",
+                                }}
+                            >Our Happy uests Say
                             </h4>
                         </div>
                     </div>

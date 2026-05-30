@@ -26,7 +26,8 @@ export default function Home() {
     <>
       <Suspense fallback="loading">
         <BannerWrapper /> 
-      </Suspense>      
+      </Suspense> 
+      <OtherHotelsSection/>     
       <HomeAboutUs />
       <OurBestServices/>
       <AccommodationDining/>
@@ -41,7 +42,7 @@ export default function Home() {
       <Suspense fallback={<div>Loading Nearby Attractions...</div>}>
         <NearByAttractionWrapper/>
       </Suspense> 
-      <OtherHotelsSection/>     
+           
       <Suspense fallback={<div>Loading Blog...</div>}>
         <HomeBlogWrapper/>
       </Suspense>

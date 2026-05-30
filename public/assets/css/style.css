@@ -4837,20 +4837,20 @@ footer {
 }
 
 .rx-amenities-contact .inner-banner h4 {
-  font-size: 68px;
+  font-size: 50px;
   font-weight: 700;
-  color: #131618;
+  color: #ffffff;
   line-height: 70px;
-  text-shadow: 1px 1px #fff, -1px 1px #fff, 1px -1px #fff, -1px -1px #fff, 1px 1px 5px #555555;
+  /* text-shadow: 1px 1px #fff, -1px 1px #fff, 1px -1px #fff, -1px -1px #fff, 1px 1px 5px #555555; */
 }
 
 .rx-amenities-contact .inner-banner h5 {
     font-size: 20px;
-    font-weight: 700;
-    color: #131618;
+    font-weight: 500;
+    color: #ffffff;
     line-height: 22px;
     margin-top: 10px;
-    text-shadow: 1px 1px #fff, -1px 1px #fff, 1px -1px #fff, -1px -1px #fff, 1px 1px 5px #555555;
+    /* text-shadow: 1px 1px #fff, -1px 1px #fff, 1px -1px #fff, -1px -1px #fff, 1px 1px 5px #555555; */
 }
 
 .rx-amenities-contact p {

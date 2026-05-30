@@ -96,7 +96,7 @@ export default function Banner({ initialVideo }) {
         }
     }, [initialVideo]);
     return (
-        <section className="section-hero margin-b-0">
+        <section className="section-hero margin-b-0 bg-[#eae7e1]">
             <div className="container-fulid">
                 <div className="row">
                     <div className="col-12">

@@ -74,19 +74,19 @@ export const HomeAboutUs = () => {
                 <div className="rx-about-inner-box">
                   <div className="row mb-minus-24">
                     <div className="col-sm-4 col-12 rx-575-50 mb-24">
-                      <div className="rx-about-box" data-aos="zoom-in" data-aos-delay="300">
+                      <div className="rx-about-box shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
                         <h5>Unmatched Hospitality</h5>
                         {/* <p>Awards</p> */}
                       </div>
                     </div>
                     <div className="col-sm-4 col-12 rx-575-50 mb-24 mt-24">
-                      <div className="rx-about-box" data-aos="zoom-in" data-aos-delay="400">
+                      <div className="rx-about-box shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
                         <h5>Close to Key Destinations</h5>
                         {/* <p>Visitors</p> */}
                       </div>
                     </div>
                     <div className="col-sm-4 col-12 rx-575-50 mb-24">
-                      <div className="rx-about-box" data-aos="zoom-in" data-aos-delay="500">
+                      <div className="rx-about-box shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
                         <h5>For Family & Business both</h5>
                         {/* <p>Events</p> */}
                       </div>
