@@ -88,86 +88,82 @@ export const OurBestServices = () => {
                             </h2>
                         </div>
                     </div>
-                    <div className="row">
-                        {services.map((service, index) => (
+                    {services.map((service, index) => (
+                        <div
+                            key={index}
+                            className="col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4"
+                        >
                             <div
-                                key={index}
-                                className="col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4"
+                                className="
+                                    group relative h-full overflow-hidden
+                                    rounded-3xl bg-white
+                                    border border-slate-100
+                                    p-3
+                                    shadow-[0_8px_10px_rgb(0,0,0,0.08)]
+                                    transition-all duration-500
+                                    hover:-translate-y-3
+                                    hover:shadow-2xl
+                                "
                             >
-                                <div
-                                    className="
-                                        group relative h-full overflow-hidden
-                                        rounded-3xl bg-white
-                                        border border-slate-100
-                                        p-3
-                                        shadow-[0_8px_10px_rgb(0,0,0,0.08)]
-                                        transition-all duration-500
-                                        hover:-translate-y-3
-                                        hover:shadow-2xl
-                                    "
-                                >
-                                    {/* Hover Gradient */}
-                                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-orange-50 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+                                {/* Hover Gradient */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-orange-50 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
 
-                                    {/* Top Border */}
-                                    {/* <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-orange-950 to-orange-800"></div> */}
+                                {/* Top Border */}
+                                {/* <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-orange-950 to-orange-800"></div> */}
 
-                                    <div className="relative z-10">
-                                        <div
-                                            className="
-                                                mb-6 flex h-20 w-20 items-center justify-center
-                                                rounded-2xl
-                                                bg-gradient-to-br
-                                                from-blue-100 to-orange-100
-                                                transition-all duration-500
-                                                group-hover:scale-110 group-hover:rotate-6
-                                            "
-                                        >
-                                            <img
-                                                src={`assets/img/services/${service.icon}`}
-                                                alt={service.title}
-                                                className="h-10 w-10 object-contain"
-                                            />
-                                        </div>
-                                        <h4 className="mb-3 text-xl font-bold text-slate-800">
-                                            {service.title}
-                                        </h4>
-                                        <ul className="space-y-3">
-                                            {service.items.map((item, i) => (
-                                                <li
-                                                    key={i}
-                                                    className="flex items-start gap-3 text-gray-600"
-                                                >
-                                                    <div className="mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-green-100">
-                                                        <svg
-                                                            className="h-3 w-3 text-green-600"
-                                                            fill="none"
-                                                            stroke="currentColor"
-                                                            viewBox="0 0 24 24"
-                                                        >
-                                                            <path
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                strokeWidth="3"
-                                                                d="M5 13l4 4L19 7"
-                                                            />
-                                                        </svg>
-                                                    </div>
-
-                                                    <span className="leading-relaxed">
-                                                        {item}
-                                                    </span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                        
+                                <div className="relative z-10">
+                                    <div
+                                        className="
+                                            mb-6 flex h-20 w-20 items-center justify-center
+                                            rounded-2xl
+                                            bg-gradient-to-br
+                                            from-blue-100 to-orange-100
+                                            transition-all duration-500
+                                            group-hover:scale-110 group-hover:rotate-6
+                                        "
+                                    >
+                                        <img
+                                            src={`assets/img/services/${service.icon}`}
+                                            alt={service.title}
+                                            className="h-10 w-10 object-contain"
+                                        />
                                     </div>
+                                    <h4 className="mb-3 text-xl font-bold text-slate-800">
+                                        {service.title}
+                                    </h4>
+                                    <ul className="space-y-3">
+                                        {service.items.map((item, i) => (
+                                            <li
+                                                key={i}
+                                                className="flex items-start gap-3 text-gray-600"
+                                            >
+                                                <div className="mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-green-100">
+                                                    <svg
+                                                        className="h-3 w-3 text-green-600"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        viewBox="0 0 24 24"
+                                                    >
+                                                        <path
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                            strokeWidth="3"
+                                                            d="M5 13l4 4L19 7"
+                                                        />
+                                                    </svg>
+                                                </div>
+
+                                                <span className="leading-relaxed">
+                                                    {item}
+                                                </span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    
                                 </div>
                             </div>
-                        ))}
-                    </div>
-
-
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
