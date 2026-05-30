@@ -11,6 +11,12 @@ export const roomsData = {
       image: "/assets/dev-img/room/suite-room.jpg",
       gallery: [
         "/assets/dev-img/room/suite-room.jpg",        
+        "/assets/dev-img/room/suites/1.png",        
+        "/assets/dev-img/room/suites/2.png",        
+        "/assets/dev-img/room/suites/3.png",        
+        "/assets/dev-img/room/suites/4.png",        
+        "/assets/dev-img/room/suites/5.png",        
+        "/assets/dev-img/room/suites/6.png",        
       ],
       amenities: [
         { icon: "Bed", label: "Suite Size Bed" },
@@ -53,6 +59,11 @@ export const roomsData = {
       image: "/assets/dev-img/room/premium-room.jpg",
       gallery: [
         "/assets/dev-img/room/premium-room.jpg",
+        "/assets/dev-img/room/premium/1.jpg",
+        "/assets/dev-img/room/premium/2.jpg",
+        "/assets/dev-img/room/premium/3.jpg",
+        "/assets/dev-img/room/premium/4.jpg",
+        "/assets/dev-img/room/premium/5.jpg",
     ],
       amenities: [
         { icon: "Bed", label: "King Bed" },
@@ -94,6 +105,12 @@ export const roomsData = {
       image: "/assets/dev-img/room/standard-room.jpg",
       gallery: [
         "/assets/dev-img/room/standard-room.jpg",
+        "/assets/dev-img/room/standard/1.jpg",
+        "/assets/dev-img/room/standard/2.jpg",
+        "/assets/dev-img/room/standard/3.jpg",
+        "/assets/dev-img/room/standard/4.jpg",
+        "/assets/dev-img/room/standard/5.jpg",
+        "/assets/dev-img/room/standard/6.jpg",
       ],
       amenities: [
         { icon: "Bed", label: "Emperor Bed" },

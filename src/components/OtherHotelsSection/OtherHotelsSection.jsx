@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { LeftShapeSVG, RightShapeSVG } from '../SVG/BannerShapes';
 const OtherHotelsSection = () => {
     return (
-        <section className="py-16 bg-[#eae7e1] pt-5 pb-5 other-hotel-section">
+        <section className="py-16 bg-[#eae7e1] pt-0 pb-5 other-hotel-section">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="col-12">
                     <div className="rx-banner text-center rx-banner-effects">
@@ -40,7 +40,7 @@ const OtherHotelsSection = () => {
                         </div>
                         <div className="relative h-64 md:h-auto order-1 lg:order-2">
                             <img
-                                src="/assets/dev-img/other-hotel/elegance-inn.png"
+                                src="/assets/dev-img/other-hotel/elegance-inn.jpg"
                                 alt="Elegance Inn"
                                 className="w-full h-full object-cover"
                             />
@@ -74,8 +74,8 @@ const OtherHotelsSection = () => {
                         </div>
                         <div className="relative h-64 md:h-auto order-1 lg:order-2">
                             <img
-                                src="/assets/dev-img/other-hotel/dev-elegance.png"
-                                alt="Dev Elegance"
+                                src="/assets/dev-img/other-hotel/dev-residency.jpg"
+                                alt="Dev Residency"
                                 className="w-full h-full object-cover"
                             />
                         </div>
